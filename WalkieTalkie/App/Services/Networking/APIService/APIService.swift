@@ -15,7 +15,7 @@ class APIService: APIManageable {
     }
     
     func processRequest(with requestable: Requestable, completion: @escaping (Result<Data, NetworkError>) -> ()) {
-        guard let request = try? requestable.URLRequest() else {
+        guard let request = try? requestable.walkieTalkieURLRequest() else {
             completion(.failure(.badRequest))
             return
         }
