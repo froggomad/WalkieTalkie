@@ -26,7 +26,7 @@ extension Requestable {
         APIConstants.host
     }
     
-    func request() throws -> URLRequest {
+    func URLRequest() throws -> URLRequest {
         var components = URLComponents()
         components.scheme = "https"
         components.host = host

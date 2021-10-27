@@ -14,8 +14,8 @@ class APIService: APIManageable {
         self.urlSession = urlSession
     }
     
-    func initRequest(with data: Requestable, completion: @escaping (Result<Data, NetworkError>) -> ()) {
-        guard let request = try? data.request() else {
+    func processRequest(with requestable: Requestable, completion: @escaping (Result<Data, NetworkError>) -> ()) {
+        guard let request = try? requestable.URLRequest() else {
             completion(.failure(.badRequest))
             return
         }
