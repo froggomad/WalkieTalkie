@@ -46,3 +46,9 @@ class APIService: APIManageable {
         }.resume()
     }
 }
+
+class MockAPIService: APIManageable {
+    func processRequest(with data: Requestable, completion: @escaping (Result<Data, NetworkError>) -> ()) {
+        completion(.success(AudioRecording.mockData))
+    }
+}
