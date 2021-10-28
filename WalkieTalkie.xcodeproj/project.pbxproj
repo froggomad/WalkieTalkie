@@ -20,6 +20,8 @@
 		AA19D501272A03D900CFD6D8 /* Data Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D500272A03D800CFD6D8 /* Data Parser.swift */; };
 		AA19D503272A04FE00CFD6D8 /* AudioRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D502272A04FE00CFD6D8 /* AudioRecording.swift */; };
 		AA19D507272A076100CFD6D8 /* GetRecordingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D506272A076100CFD6D8 /* GetRecordingRequest.swift */; };
+		AA19D509272A133A00CFD6D8 /* AudioRecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */; };
+		AA19D50B272A150B00CFD6D8 /* RecordingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		AA19D500272A03D800CFD6D8 /* Data Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Parser.swift"; sourceTree = "<group>"; };
 		AA19D502272A04FE00CFD6D8 /* AudioRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecording.swift; sourceTree = "<group>"; };
 		AA19D506272A076100CFD6D8 /* GetRecordingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecordingRequest.swift; sourceTree = "<group>"; };
+		AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingViewModel.swift; sourceTree = "<group>"; };
+		AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		AA19D4EF2729F9F900CFD6D8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				AA19D506272A076100CFD6D8 /* GetRecordingRequest.swift */,
+				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
 			);
 			path = ListRecordings;
 			sourceTree = "<group>";
@@ -243,7 +249,9 @@
 				AA19D4E22729F95900CFD6D8 /* ContentView.swift in Sources */,
 				AA19D4E02729F95900CFD6D8 /* WalkieTalkieApp.swift in Sources */,
 				AA19D501272A03D900CFD6D8 /* Data Parser.swift in Sources */,
+				AA19D509272A133A00CFD6D8 /* AudioRecordingViewModel.swift in Sources */,
 				AA19D507272A076100CFD6D8 /* GetRecordingRequest.swift in Sources */,
+				AA19D50B272A150B00CFD6D8 /* RecordingRow.swift in Sources */,
 				AA19D4F52729FAA300CFD6D8 /* RequestType.swift in Sources */,
 				AA19D4F9272A022000CFD6D8 /* APIService.swift in Sources */,
 				AA19D4F72729FB1A00CFD6D8 /* APIManageable.swift in Sources */,
