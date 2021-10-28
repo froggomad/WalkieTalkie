@@ -6,12 +6,28 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct RecordingRow: View {
-    let recording: AudioRecording
+    @State var audioService = AudioService.shared
+    @State var recording: AudioRecording
     
     var body: some View {
-        Text("From: \(recording.usernameFrom ?? "Anonymous")")
+        VStack(alignment: .leading) {
+            Text("From: \(recording.usernameFrom ?? "Anonymous")")
+            VideoPlayer(player: audioService.player) {
+                Color(.white)
+            }
+            .onDisappear() {
+                audioService.player?.pause()
+            }
+            .frame(width: 75, height: 50, alignment: .bottom)
+            .onTapGesture {
+                audioService.url = recording.url
+                audioService.player?.play()
+            }
+        }
+        
     }
 }
 
