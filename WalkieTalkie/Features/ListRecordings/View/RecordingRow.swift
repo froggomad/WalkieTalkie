@@ -15,8 +15,8 @@ struct RecordingRow: View {
     }
 }
 
-//struct RecordingRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecordingRow()
-//    }
-//}
+struct RecordingRow_Previews: PreviewProvider {
+    static var previews: some View {
+        RecordingRow(recording: AudioRecording.previewRecording)
+    }
+}

@@ -158,8 +158,8 @@
 		AA19D504272A073E00CFD6D8 /* ListRecordings */ = {
 			isa = PBXGroup;
 			children = (
-				AA19D506272A076100CFD6D8 /* GetRecordingRequest.swift */,
-				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
+				AA19D50C272A37C300CFD6D8 /* Service */,
+				AA19D50D272A37C900CFD6D8 /* View */,
 			);
 			path = ListRecordings;
 			sourceTree = "<group>";
@@ -170,6 +170,22 @@
 				AA19D504272A073E00CFD6D8 /* ListRecordings */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		AA19D50C272A37C300CFD6D8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AA19D506272A076100CFD6D8 /* GetRecordingRequest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AA19D50D272A37C900CFD6D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
