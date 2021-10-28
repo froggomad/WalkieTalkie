@@ -14,6 +14,10 @@ struct AudioRecording: Codable, Identifiable {
     let timestamp: Date
     let recording: String
     
+    var url: URL {
+        return URL(string: "http://localhost:3000/recordings/example_transmission.mp3")!
+    }
+    
     init(id: Int, usernameFrom: String?, usernameTo: String, timestamp: Date, recording: String) {
         self.id = id
         self.usernameFrom = usernameFrom
