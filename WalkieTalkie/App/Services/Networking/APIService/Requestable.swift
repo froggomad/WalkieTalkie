@@ -28,7 +28,7 @@ extension Requestable {
     
     func walkieTalkieURLRequest() throws -> URLRequest {
         var components = URLComponents()
-        components.scheme = "https"
+        components.scheme = "http"
         components.host = host
         components.path = path
         components.port = APIConstants.port

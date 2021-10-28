@@ -8,7 +8,7 @@
 import Foundation
 
 struct GetRecordingRequest: Requestable {
-    let path: String = "history"
+    let path: String = "/history"
     
     let requestType: RequestType = .GET    
 }
