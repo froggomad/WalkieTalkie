@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA19D4E02729F95900CFD6D8 /* WalkieTalkieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D4DF2729F95900CFD6D8 /* WalkieTalkieApp.swift */; };
-		AA19D4E22729F95900CFD6D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D4E12729F95900CFD6D8 /* ContentView.swift */; };
+		AA19D4E22729F95900CFD6D8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D4E12729F95900CFD6D8 /* HistoryView.swift */; };
 		AA19D4E42729F95B00CFD6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA19D4E32729F95B00CFD6D8 /* Assets.xcassets */; };
 		AA19D4E72729F95B00CFD6D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA19D4E62729F95B00CFD6D8 /* Preview Assets.xcassets */; };
 		AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D4F12729FA5E00CFD6D8 /* Requestable.swift */; };
@@ -17,7 +17,7 @@
 		AA19D4F9272A022000CFD6D8 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D4F8272A022000CFD6D8 /* APIService.swift */; };
 		AA19D4FB272A024E00CFD6D8 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D4FA272A024E00CFD6D8 /* APIConstants.swift */; };
 		AA19D4FF272A036900CFD6D8 /* DataParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D4FE272A036900CFD6D8 /* DataParsable.swift */; };
-		AA19D501272A03D900CFD6D8 /* Data Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D500272A03D800CFD6D8 /* Data Parser.swift */; };
+		AA19D501272A03D900CFD6D8 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D500272A03D800CFD6D8 /* DataParser.swift */; };
 		AA19D503272A04FE00CFD6D8 /* AudioRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D502272A04FE00CFD6D8 /* AudioRecording.swift */; };
 		AA19D507272A076100CFD6D8 /* GetRecordingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D506272A076100CFD6D8 /* GetRecordingRequest.swift */; };
 		AA19D509272A133A00CFD6D8 /* AudioRecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */; };
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		AA19D4DC2729F95900CFD6D8 /* WalkieTalkie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkieTalkie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA19D4DF2729F95900CFD6D8 /* WalkieTalkieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkieTalkieApp.swift; sourceTree = "<group>"; };
-		AA19D4E12729F95900CFD6D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA19D4E12729F95900CFD6D8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		AA19D4E32729F95B00CFD6D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA19D4E62729F95B00CFD6D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA19D4F12729FA5E00CFD6D8 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 		AA19D4F8272A022000CFD6D8 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AA19D4FA272A024E00CFD6D8 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		AA19D4FE272A036900CFD6D8 /* DataParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParsable.swift; sourceTree = "<group>"; };
-		AA19D500272A03D800CFD6D8 /* Data Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Parser.swift"; sourceTree = "<group>"; };
+		AA19D500272A03D800CFD6D8 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		AA19D502272A04FE00CFD6D8 /* AudioRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecording.swift; sourceTree = "<group>"; };
 		AA19D506272A076100CFD6D8 /* GetRecordingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecordingRequest.swift; sourceTree = "<group>"; };
 		AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingViewModel.swift; sourceTree = "<group>"; };
@@ -74,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				AA19D4F02729FA0C00CFD6D8 /* App */,
-				AA19D4E12729F95900CFD6D8 /* ContentView.swift */,
 				AA19D505272A074F00CFD6D8 /* Features */,
 				AA19D4E52729F95B00CFD6D8 /* Preview Content */,
 			);
@@ -118,6 +117,7 @@
 			children = (
 				AA19D4ED2729F9EA00CFD6D8 /* Services */,
 				AA19D4EE2729F9F200CFD6D8 /* Model */,
+				AA19D510272A4B0000CFD6D8 /* View */,
 				AA19D4EF2729F9F900CFD6D8 /* ViewModel */,
 				AA19D4E32729F95B00CFD6D8 /* Assets.xcassets */,
 				AA19D4DF2729F95900CFD6D8 /* WalkieTalkieApp.swift */,
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				AA19D4FE272A036900CFD6D8 /* DataParsable.swift */,
-				AA19D500272A03D800CFD6D8 /* Data Parser.swift */,
+				AA19D500272A03D800CFD6D8 /* DataParser.swift */,
 			);
 			path = "Data Parsing";
 			sourceTree = "<group>";
@@ -184,6 +184,14 @@
 			isa = PBXGroup;
 			children = (
 				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA19D510272A4B0000CFD6D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA19D4E12729F95900CFD6D8 /* HistoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,9 +270,9 @@
 				AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */,
 				AA19D4FF272A036900CFD6D8 /* DataParsable.swift in Sources */,
 				AA19D4FB272A024E00CFD6D8 /* APIConstants.swift in Sources */,
-				AA19D4E22729F95900CFD6D8 /* ContentView.swift in Sources */,
+				AA19D4E22729F95900CFD6D8 /* HistoryView.swift in Sources */,
 				AA19D4E02729F95900CFD6D8 /* WalkieTalkieApp.swift in Sources */,
-				AA19D501272A03D900CFD6D8 /* Data Parser.swift in Sources */,
+				AA19D501272A03D900CFD6D8 /* DataParser.swift in Sources */,
 				AA19D509272A133A00CFD6D8 /* AudioRecordingViewModel.swift in Sources */,
 				AA19D507272A076100CFD6D8 /* GetRecordingRequest.swift in Sources */,
 				AA19D50B272A150B00CFD6D8 /* RecordingRow.swift in Sources */,

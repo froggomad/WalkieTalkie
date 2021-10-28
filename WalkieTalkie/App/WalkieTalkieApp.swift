@@ -11,7 +11,7 @@ import SwiftUI
 struct WalkieTalkieApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: AudioRecordingViewModel())
+            HistoryView(viewModel: AudioRecordingViewModel())
         }
     }
 }

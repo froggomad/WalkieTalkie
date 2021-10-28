@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HistoryView.swift
 //  WalkieTalkie
 //
 //  Created by Kenneth Dubroff on 10/27/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HistoryView: View {
     @ObservedObject var viewModel: AudioRecordingViewModel
     
     var body: some View {
@@ -21,6 +21,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: AudioRecordingViewModel(apiService: MockAPIService()))
+        HistoryView(viewModel: AudioRecordingViewModel(apiService: MockAPIService()))
     }
 }
