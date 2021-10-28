@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AudioRecording: Codable {
+struct AudioRecording: Codable, Identifiable {
     let id: Int
     let usernameFrom: String?
     let usernameTo: String
