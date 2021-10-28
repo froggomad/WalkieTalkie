@@ -14,6 +14,14 @@ struct AudioRecording: Codable, Identifiable {
     let timestamp: Date
     let recording: String
     
+    init(id: Int, usernameFrom: String?, usernameTo: String, timestamp: Date, recording: String) {
+        self.id = id
+        self.usernameFrom = usernameFrom
+        self.usernameTo = usernameTo
+        self.timestamp = timestamp
+        self.recording = recording
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
@@ -27,6 +35,7 @@ struct AudioRecording: Codable, Identifiable {
 }
 
 extension AudioRecording {
+    static let previewRecording = AudioRecording(id: 0, usernameFrom: "Someone Else", usernameTo: "You", timestamp: Date(), recording: "example_transmission.mp3")
     static let mockData =
     """
     [{"id":1,"username_from":"farbrother0","timestamp":"1606314693","recording":"/recordings/example_transmission.mp3","username_to":"kyle_ski"},
