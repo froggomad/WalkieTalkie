@@ -8,21 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel: AudioRecordingViewModel
+    
     var body: some View {
-        Button(action: {
-            do {
-                let audioRecordingData: [AudioRecording] = try DataParser().parse(data: AudioRecording.mockData)
-                print(audioRecordingData)
-            } catch {
-                print(error)
+        List {
+            ForEach(viewModel.recordings) { recording in
+                RecordingRow(recording: recording)
             }
-        }, label: {Text("Hi")})
-            .padding()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: AudioRecordingViewModel(apiService: MockAPIService()))
     }
 }
