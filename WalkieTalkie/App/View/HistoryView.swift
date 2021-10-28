@@ -12,14 +12,14 @@ struct HistoryView: View {
     @ObservedObject var viewModel: AudioRecordingViewModel
     
     var body: some View {
-        if viewModel.isLoading {
-            VStack {
+        VStack {
+            if viewModel.isLoading {
                 ProgressView("loading...")
                     .padding([.top], 20)
             }
-        }
-        if viewModel.recordings.isEmpty {
-            VStack {
+            
+            if viewModel.recordings.isEmpty {
+                
                 Spacer()
                 
                 Text("Audio Recordings will appear here when you have history to show")
@@ -27,11 +27,12 @@ struct HistoryView: View {
                     .padding([.leading, .trailing], 20)
                 
                 Spacer()
+                
             }
-        }
-        List {
-            ForEach(viewModel.recordings) { recording in
-                RecordingRow(recording: recording)
+            List {
+                ForEach(viewModel.recordings) { recording in
+                    RecordingRow(recording: recording)
+                }
             }
         }
     }
