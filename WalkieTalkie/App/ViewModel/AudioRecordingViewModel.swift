@@ -9,11 +9,23 @@ import Foundation
 
 class AudioRecordingViewModel: ObservableObject {
     @Published var recordings: [AudioRecording] = []
+    @Published var isLoading: Bool = false
+    
     let apiService: APIManageable
     
     init(apiService: APIManageable = APIService()) {
         self.apiService = apiService
+        isLoading = true
+        loadRecordingsFromAPI()
+    }
+    
+    func loadRecordingsFromAPI() {
         apiService.processRequest(with: GetRecordingRequest()) { [weak self] result in
+            defer {
+                DispatchQueue.main.async {
+                    self?.isLoading = false
+                }
+            }
             switch result {
             case let .success(data):
                 do {
