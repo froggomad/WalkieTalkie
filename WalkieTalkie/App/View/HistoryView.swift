@@ -59,20 +59,19 @@ struct HistoryView: View {
                             if !viewModel.incomingRecordings.isEmpty {
                                 Section(header: Text("Incoming Recordings")) {
                                     
-                                    let filteredOutgoingRecordings = viewModel.incomingRecordings.filter({
+                                    let filteredIncomingRecordings = viewModel.incomingRecordings.filter {
                                         let fromUsername = $0.usernameFrom ?? ""
                                         
                                         return fromUsername.lowercased().contains(searchText.lowercased())
                                         
-                                    })
-                                    
-                                    let outgoingRecordings = filteredOutgoingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredOutgoingRecordings
-                                    
-                                    
-                                    ForEach(outgoingRecordings){ recording in
-                                        RecordingRow(audioService: viewModel.audioService, recording: recording)
                                     }
                                     
+                                    let incomingRecordings = filteredIncomingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredIncomingRecordings
+                                    
+                                    
+                                    ForEach(incomingRecordings) { recording in
+                                        RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                    }
                                 }
                             }
                             
@@ -81,13 +80,12 @@ struct HistoryView: View {
                                 Section(header: Text("Outgoing Recordings")) {
                                     
                                     let filteredOutgoingRecordings =
-                                    viewModel.outgoingRecordings.filter( {
+                                    viewModel.outgoingRecordings.filter {
                                         $0.usernameTo.lowercased().contains(searchText.lowercased())
-                                    })
+                                    }
                                     
                                     let outgoingRecordings = filteredOutgoingRecordings.isEmpty && isSearching == false ?
                                     viewModel.outgoingRecordings : filteredOutgoingRecordings
-                                    
                                     
                                     ForEach(outgoingRecordings) { recording in
                                         RecordingRow(audioService: viewModel.audioService, recording: recording)
