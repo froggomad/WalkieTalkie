@@ -68,7 +68,7 @@ struct HistoryView: View {
                                         RecordingRow(audioService: viewModel.audioService, recording: recording)
                                     }
                                     
-                                    if filteredRows.data.isEmpty {
+                                    if filteredRows.data.isEmpty && searchText.isEmpty {
                                         ForEach(viewModel.incomingRecordings) { recording in
                                             RecordingRow(audioService: viewModel.audioService, recording: recording)
                                         }
@@ -91,7 +91,7 @@ struct HistoryView: View {
                                         RecordingRow(audioService: viewModel.audioService, recording: recording)
                                     }
                                     
-                                    if filteredRecordings.data.isEmpty {
+                                    if filteredRecordings.data.isEmpty && searchText.isEmpty {
                                         ForEach(viewModel.outgoingRecordings) { recording in
                                             RecordingRow(audioService: viewModel.audioService, recording: recording)
                                         }
