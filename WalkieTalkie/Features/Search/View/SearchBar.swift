@@ -24,6 +24,7 @@ struct SearchBar: View {
                 .onTapGesture {
                     isSearching = true
                 }
+                .modifier(ClearButton(text: $searchText))
             
             if isSearching {
                 Button("cancel") {
