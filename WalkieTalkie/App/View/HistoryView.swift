@@ -32,28 +32,11 @@ struct HistoryView: View {
                     
                     Spacer()
                 }
+                
                 NavigationView {
                     VStack {
-                        HStack {
-                            TextField("Search for username", text: $searchText)
-                                .id(textFieldId)
-                                .padding(8)
-                                .background(Color(.systemGray5))
-                                .cornerRadius(6)
-                                .padding(.horizontal, 20)
-                                .onTapGesture {
-                                    isSearching = true
-                                }
-                            
-                            if isSearching {
-                                Button("cancel") {
-                                    isSearching = false
-                                    // changing the ID dismisses the keyboard
-                                    textFieldId = UUID().uuidString
-                                }
-                                .padding(.trailing, 12)
-                            }
-                        }
+                        SearchBar(searchText: $searchText, isSearching: $isSearching)
+                        
                         List {
                             // MARK: - Incoming Recordings -
                             if !viewModel.incomingRecordings.isEmpty {
@@ -67,7 +50,6 @@ struct HistoryView: View {
                                     }
                                     
                                     let incomingRecordings = filteredIncomingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredIncomingRecordings
-                                    
                                     
                                     ForEach(incomingRecordings) { recording in
                                         RecordingRow(audioService: viewModel.audioService, recording: recording)

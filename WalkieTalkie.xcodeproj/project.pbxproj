@@ -23,6 +23,7 @@
 		AA19D509272A133A00CFD6D8 /* AudioRecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */; };
 		AA19D50B272A150B00CFD6D8 /* RecordingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */; };
 		AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D51A272A617100CFD6D8 /* AudioService.swift */; };
+		AAD3097D272C7FE9000D51E5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3097C272C7FE9000D51E5 /* SearchBar.swift */; };
 		AAD9EC41272C4F2E0099A562 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9EC40272C4F2E0099A562 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingViewModel.swift; sourceTree = "<group>"; };
 		AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRow.swift; sourceTree = "<group>"; };
 		AA19D51A272A617100CFD6D8 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		AAD3097C272C7FE9000D51E5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AAD9EC40272C4F2E0099A562 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 		AA19D505272A074F00CFD6D8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AAD30979272C7FC8000D51E5 /* Search */,
 				AA19D504272A073E00CFD6D8 /* ListRecordings */,
 			);
 			path = Features;
@@ -209,6 +212,14 @@
 				AA19D51A272A617100CFD6D8 /* AudioService.swift */,
 			);
 			path = AudioService;
+			sourceTree = "<group>";
+		};
+		AAD30979272C7FC8000D51E5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AAD3097C272C7FE9000D51E5 /* SearchBar.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 				AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */,
 				AA19D4FF272A036900CFD6D8 /* DataParsable.swift in Sources */,
 				AA19D4FB272A024E00CFD6D8 /* APIConstants.swift in Sources */,
+				AAD3097D272C7FE9000D51E5 /* SearchBar.swift in Sources */,
 				AA19D4E22729F95900CFD6D8 /* HistoryView.swift in Sources */,
 				AA19D4E02729F95900CFD6D8 /* WalkieTalkieApp.swift in Sources */,
 				AA19D501272A03D900CFD6D8 /* DataParser.swift in Sources */,
