@@ -37,13 +37,13 @@ struct HistoryView: View {
                         HStack {
                             TextField("Search for username", text: $searchText)
                                 .id(textFieldId)
-                            .padding(8)
-                            .background(Color(.systemGray5))
-                            .cornerRadius(6)
-                            .padding(.horizontal, 20)
-                            .onTapGesture {
-                                isSearching = true
-                            }
+                                .padding(8)
+                                .background(Color(.systemGray5))
+                                .cornerRadius(6)
+                                .padding(.horizontal, 20)
+                                .onTapGesture {
+                                    isSearching = true
+                                }
                             
                             if isSearching {
                                 Button("cancel") {
