@@ -59,21 +59,18 @@ struct HistoryView: View {
                             if !viewModel.incomingRecordings.isEmpty {
                                 Section(header: Text("Incoming Recordings")) {
                                     
-                                    let filteredIncomingRows = ForEach(viewModel.incomingRecordings.filter({
+                                    let filteredOutgoingRecordings = viewModel.incomingRecordings.filter({
                                         let fromUsername = $0.usernameFrom ?? ""
                                         
                                         return fromUsername.lowercased().contains(searchText.lowercased())
                                         
-                                    })){ recording in
-                                        RecordingRow(audioService: viewModel.audioService, recording: recording)
-                                    }
+                                    })
                                     
-                                    if filteredIncomingRows.data.isEmpty && searchText.isEmpty {
-                                        ForEach(viewModel.incomingRecordings) { recording in
-                                            RecordingRow(audioService: viewModel.audioService, recording: recording)
-                                        }
-                                    } else {
-                                        filteredIncomingRows
+                                    let outgoingRecordings = filteredOutgoingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredOutgoingRecordings
+                                    
+                                    
+                                    ForEach(outgoingRecordings){ recording in
+                                        RecordingRow(audioService: viewModel.audioService, recording: recording)
                                     }
                                     
                                 }
@@ -81,24 +78,20 @@ struct HistoryView: View {
                             
                             // MARK: - Outgoing Recordings -
                             if !viewModel.outgoingRecordings.isEmpty {
-                                Section(header:
-                                            Text("Outgoing Recordings")) {
+                                Section(header: Text("Outgoing Recordings")) {
                                     
-                                    let filteredOutgoingRows =
-                                    ForEach(viewModel.outgoingRecordings.filter( {
+                                    let filteredOutgoingRecordings =
+                                    viewModel.outgoingRecordings.filter( {
                                         $0.usernameTo.lowercased().contains(searchText.lowercased())
-                                    })) { recording in
+                                    })
+                                    
+                                    let outgoingRecordings = filteredOutgoingRecordings.isEmpty && isSearching == false ?
+                                    viewModel.outgoingRecordings : filteredOutgoingRecordings
+                                    
+                                    
+                                    ForEach(outgoingRecordings) { recording in
                                         RecordingRow(audioService: viewModel.audioService, recording: recording)
                                     }
-                                    
-                                    if filteredOutgoingRows.data.isEmpty && searchText.isEmpty {
-                                        ForEach(viewModel.outgoingRecordings) { recording in
-                                            RecordingRow(audioService: viewModel.audioService, recording: recording)
-                                        }
-                                    } else {
-                                        filteredOutgoingRows
-                                    }
-                                    
                                 }
                             }
                         }
