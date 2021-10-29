@@ -25,6 +25,7 @@
 		AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D51A272A617100CFD6D8 /* AudioService.swift */; };
 		AAD3097D272C7FE9000D51E5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3097C272C7FE9000D51E5 /* SearchBar.swift */; };
 		AAD30981272C99DC000D51E5 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD30980272C99DC000D51E5 /* SearchService.swift */; };
+		AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */; };
 		AAD9EC41272C4F2E0099A562 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9EC40272C4F2E0099A562 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		AA19D51A272A617100CFD6D8 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		AAD3097C272C7FE9000D51E5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AAD30980272C99DC000D51E5 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButtonViewModifier.swift; sourceTree = "<group>"; };
 		AAD9EC40272C4F2E0099A562 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				AAD3097C272C7FE9000D51E5 /* SearchBar.swift */,
+				AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */,
 				AA19D503272A04FE00CFD6D8 /* AudioRecording.swift in Sources */,
 				AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */,
+				AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */,
 				AA19D4FF272A036900CFD6D8 /* DataParsable.swift in Sources */,
 				AA19D4FB272A024E00CFD6D8 /* APIConstants.swift in Sources */,
 				AAD30981272C99DC000D51E5 /* SearchService.swift in Sources */,
