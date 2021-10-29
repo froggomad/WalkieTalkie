@@ -8,9 +8,10 @@
 import Foundation
 
 class AudioRecordingViewModel: ObservableObject {
-    @Published var recordings: [AudioRecording] = []
+    @Published var incomingRecordings: [AudioRecording] = []
+    @Published var outgoingRecordings: [AudioRecording] = []
     @Published var isLoading: Bool = false
-    var audioService = AudioService.shared
+    let user = User(username: "admin")
     
     var audioService: AudioService
     let apiService: APIManageable
@@ -36,7 +37,12 @@ class AudioRecordingViewModel: ObservableObject {
                 do {
                     let recordings: [AudioRecording] = try DataParser().parse(data: data)
                     DispatchQueue.main.async {
-                        self?.recordings = recordings
+                        if self.user.username == "admin" {
+                            self.incomingRecordings = recordings
+                        } else {
+                            self.incomingRecordings = recordings.filter { $0.usernameTo == self.user.username }
+                            self.outgoingRecordings = recordings.filter { $0.usernameFrom == self.user.username }
+                        }
                     }
                 } catch {
                     print("Error Decoding Audio Recordings from API:", error.localizedDescription)

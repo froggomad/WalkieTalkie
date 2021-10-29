@@ -18,8 +18,8 @@ struct HistoryView: View {
                     ProgressView("loading...")
                         .padding([.top], 20)
                 }
-                
-                if viewModel.recordings.isEmpty {
+                // MARK: Empty View
+                if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
                     Spacer()
                     
                     Text("Audio Recordings will appear here when you have history to show")
@@ -29,19 +29,37 @@ struct HistoryView: View {
                     
                     Spacer()
                 }
+                
                 List {
-                    ForEach(viewModel.recordings) { recording in
-                        RecordingRow(recording: recording)
+                    if !viewModel.incomingRecordings.isEmpty {
+                        Section(header:
+                                    Text("Incoming Recordings")) {
+                            
+                            ForEach(viewModel.incomingRecordings) { recording in
+                                RecordingRow(audioService: viewModel.audioService, recording: recording)
+                            }
+                        }
+                    }
+                    
+                    if !viewModel.outgoingRecordings.isEmpty {
+                        Section(header:
+                                    Text("Outgoing Recordings")) {
+                            
+                            ForEach(viewModel.outgoingRecordings) { recording in
+                                RecordingRow(audioService: viewModel.audioService, recording: recording)
+                            }
+                        }
                     }
                 }
+                
             }
+            
         }
-
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(viewModel: AudioRecordingViewModel(apiService: MockAPIService()))
+        HistoryView(viewModel: AudioRecordingViewModel(apiService: MockAPIService(), audioService: AudioService()))
     }
 }
