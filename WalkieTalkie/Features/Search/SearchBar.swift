@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     @Binding var searchText: String
     @Binding var isSearching: Bool
+    /// used to dismiss the TextField's keyboard
     @State var textFieldId: String = UUID().uuidString
     
     var body: some View {
