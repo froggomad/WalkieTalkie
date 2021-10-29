@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 
 struct RecordingRow: View {
-    @State var audioService = AudioService.shared
+    @State var audioService: AudioService
     @State var recording: AudioRecording
     
     var body: some View {
@@ -33,6 +33,6 @@ struct RecordingRow: View {
 
 struct RecordingRow_Previews: PreviewProvider {
     static var previews: some View {
-        RecordingRow(recording: AudioRecording.previewRecording)
+        RecordingRow(audioService: AudioService(), recording: AudioRecording.previewRecording)
     }
 }

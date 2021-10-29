@@ -9,8 +9,6 @@ import Foundation
 import AVFoundation
 
 class AudioService {
-    static let shared = AudioService()
-    private init() {}
     
     var url: URL? {
         didSet {

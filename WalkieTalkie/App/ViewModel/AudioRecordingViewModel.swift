@@ -12,9 +12,11 @@ class AudioRecordingViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     var audioService = AudioService.shared
     
+    var audioService: AudioService
     let apiService: APIManageable
     
-    init(apiService: APIManageable = APIService()) {
+    init(apiService: APIManageable = APIService(), audioService: AudioService) {
+        self.audioService = audioService
         self.apiService = apiService
         isLoading = true
         loadRecordingsFromAPI()
@@ -27,11 +29,12 @@ class AudioRecordingViewModel: ObservableObject {
                     self?.isLoading = false
                 }
             }
+            guard let self = self else { return }
+            
             switch result {
             case let .success(data):
                 do {
                     let recordings: [AudioRecording] = try DataParser().parse(data: data)
-                    
                     DispatchQueue.main.async {
                         self?.recordings = recordings
                     }
