@@ -12,29 +12,31 @@ struct HistoryView: View {
     @ObservedObject var viewModel: AudioRecordingViewModel
     
     var body: some View {
-        VStack {
-            if viewModel.isLoading {
-                ProgressView("loading...")
-                    .padding([.top], 20)
-            }
-            
-            if viewModel.recordings.isEmpty {
+        GeometryReader { geometry in
+            VStack {
+                if viewModel.isLoading {
+                    ProgressView("loading...")
+                        .padding([.top], 20)
+                }
                 
-                Spacer()
-                
-                Text("Audio Recordings will appear here when you have history to show")
-                    .font(.title)
-                    .padding([.leading, .trailing], 20)
-                
-                Spacer()
-                
-            }
-            List {
-                ForEach(viewModel.recordings) { recording in
-                    RecordingRow(recording: recording)
+                if viewModel.recordings.isEmpty {
+                    Spacer()
+                    
+                    Text("Audio Recordings will appear here when you have history to show")
+                        .font(.title)
+                        .padding([.leading, .trailing], 20)
+                        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                    
+                    Spacer()
+                }
+                List {
+                    ForEach(viewModel.recordings) { recording in
+                        RecordingRow(recording: recording)
+                    }
                 }
             }
         }
+
     }
 }
 

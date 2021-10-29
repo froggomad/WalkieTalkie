@@ -120,7 +120,6 @@
 			children = (
 				AA19D4ED2729F9EA00CFD6D8 /* Services */,
 				AA19D4EE2729F9F200CFD6D8 /* Model */,
-				AA19D510272A4B0000CFD6D8 /* View */,
 				AA19D4EF2729F9F900CFD6D8 /* ViewModel */,
 				AA19D4E32729F95B00CFD6D8 /* Assets.xcassets */,
 				AA19D4DF2729F95900CFD6D8 /* WalkieTalkieApp.swift */,
@@ -161,6 +160,7 @@
 		AA19D504272A073E00CFD6D8 /* ListRecordings */ = {
 			isa = PBXGroup;
 			children = (
+				AA19D510272A4B0000CFD6D8 /* View */,
 				AA19D50C272A37C300CFD6D8 /* Service */,
 				AA19D50D272A37C900CFD6D8 /* View */,
 			);
@@ -196,7 +196,8 @@
 			children = (
 				AA19D4E12729F95900CFD6D8 /* HistoryView.swift */,
 			);
-			path = View;
+			name = View;
+			path = ../../App/View;
 			sourceTree = "<group>";
 		};
 		AA19D519272A616700CFD6D8 /* AudioService */ = {
