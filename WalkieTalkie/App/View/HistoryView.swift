@@ -6,17 +6,19 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct HistoryView: View {
     @ObservedObject var viewModel: AudioRecordingViewModel
+    @State private var searchText = ""
+    @State private var isSearching = false
+    @State private var textFieldId: String = UUID().uuidString
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 if viewModel.isLoading {
                     ProgressView("loading...")
-                        .padding([.top], 20)
+                        .padding(.top, 20)
                 }
                 // MARK: Empty View
                 if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
@@ -24,34 +26,82 @@ struct HistoryView: View {
                     
                     Text("Audio Recordings will appear here when you have history to show")
                         .font(.title)
-                        .padding([.leading, .trailing], 20)
+                        .padding(.horizontal, 20)
                         .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                     
                     Spacer()
                 }
-                
-                List {
-                    if !viewModel.incomingRecordings.isEmpty {
-                        Section(header:
-                                    Text("Incoming Recordings")) {
+                NavigationView {
+                    VStack {
+                        HStack {
+                            TextField("Search for username", text: $searchText)
+                                .id(textFieldId)
+                            .padding(8)
+                            .background(Color(.systemGray5))
+                            .cornerRadius(6)
+                            .padding(.horizontal, 20)
+                            .onTapGesture {
+                                isSearching = true
+                            }
                             
-                            ForEach(viewModel.incomingRecordings) { recording in
-                                RecordingRow(audioService: viewModel.audioService, recording: recording)
+                            if isSearching {
+                                Button("cancel") {
+                                    isSearching = false
+                                    textFieldId = UUID().uuidString
+                                }
+                                .padding(.trailing, 12)
                             }
                         }
-                    }
-                    
-                    if !viewModel.outgoingRecordings.isEmpty {
-                        Section(header:
-                                    Text("Outgoing Recordings")) {
+                        List {
+                            // MARK: - Incoming Recordings -
+                            if !viewModel.incomingRecordings.isEmpty {
+                                Section(header: Text("Incoming Recordings")) {
+                                    
+                                    let filteredRows = ForEach(viewModel.incomingRecordings.filter({
+                                        let fromUsername = $0.usernameFrom ?? ""
+                                        
+                                        return fromUsername.lowercased().contains(searchText.lowercased())
+                                        
+                                    })){ recording in
+                                        RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                    }
+                                    
+                                    if filteredRows.data.isEmpty {
+                                        ForEach(viewModel.incomingRecordings) { recording in
+                                            RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                        }
+                                    } else {
+                                        filteredRows
+                                    }
+                                    
+                                }
+                            }
                             
-                            ForEach(viewModel.outgoingRecordings) { recording in
-                                RecordingRow(audioService: viewModel.audioService, recording: recording)
+                            // MARK: - Outgoing Recordings -
+                            if !viewModel.outgoingRecordings.isEmpty {
+                                Section(header:
+                                            Text("Outgoing Recordings")) {
+                                    
+                                    let filteredRecordings =
+                                    ForEach(viewModel.outgoingRecordings.filter( {
+                                        $0.usernameTo.lowercased().contains(searchText.lowercased())
+                                    })) { recording in
+                                        RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                    }
+                                    
+                                    if filteredRecordings.data.isEmpty {
+                                        ForEach(viewModel.outgoingRecordings) { recording in
+                                            RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                        }
+                                    } else {
+                                        filteredRecordings
+                                    }
+                                    
+                                }
                             }
                         }
                     }
                 }
-                
             }
             
         }
