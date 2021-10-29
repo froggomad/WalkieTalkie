@@ -11,6 +11,7 @@ struct HistoryView: View {
     @ObservedObject var viewModel: AudioRecordingViewModel
     @State private var searchText = ""
     @State private var isSearching = false
+    /// used to dismiss a textField's keyboard
     @State private var textFieldId: String = UUID().uuidString
     
     var body: some View {
@@ -47,6 +48,7 @@ struct HistoryView: View {
                             if isSearching {
                                 Button("cancel") {
                                     isSearching = false
+                                    // changing the ID dismisses the keyboard
                                     textFieldId = UUID().uuidString
                                 }
                                 .padding(.trailing, 12)
