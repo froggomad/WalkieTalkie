@@ -59,7 +59,7 @@ struct HistoryView: View {
                             if !viewModel.incomingRecordings.isEmpty {
                                 Section(header: Text("Incoming Recordings")) {
                                     
-                                    let filteredRows = ForEach(viewModel.incomingRecordings.filter({
+                                    let filteredIncomingRows = ForEach(viewModel.incomingRecordings.filter({
                                         let fromUsername = $0.usernameFrom ?? ""
                                         
                                         return fromUsername.lowercased().contains(searchText.lowercased())
@@ -68,12 +68,12 @@ struct HistoryView: View {
                                         RecordingRow(audioService: viewModel.audioService, recording: recording)
                                     }
                                     
-                                    if filteredRows.data.isEmpty && searchText.isEmpty {
+                                    if filteredIncomingRows.data.isEmpty && searchText.isEmpty {
                                         ForEach(viewModel.incomingRecordings) { recording in
                                             RecordingRow(audioService: viewModel.audioService, recording: recording)
                                         }
                                     } else {
-                                        filteredRows
+                                        filteredIncomingRows
                                     }
                                     
                                 }
@@ -84,19 +84,19 @@ struct HistoryView: View {
                                 Section(header:
                                             Text("Outgoing Recordings")) {
                                     
-                                    let filteredRecordings =
+                                    let filteredOutgoingRows =
                                     ForEach(viewModel.outgoingRecordings.filter( {
                                         $0.usernameTo.lowercased().contains(searchText.lowercased())
                                     })) { recording in
                                         RecordingRow(audioService: viewModel.audioService, recording: recording)
                                     }
                                     
-                                    if filteredRecordings.data.isEmpty && searchText.isEmpty {
+                                    if filteredOutgoingRows.data.isEmpty && searchText.isEmpty {
                                         ForEach(viewModel.outgoingRecordings) { recording in
                                             RecordingRow(audioService: viewModel.audioService, recording: recording)
                                         }
                                     } else {
-                                        filteredRecordings
+                                        filteredOutgoingRows
                                     }
                                     
                                 }
