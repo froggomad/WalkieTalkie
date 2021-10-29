@@ -10,6 +10,7 @@ import Foundation
 class AudioRecordingViewModel: ObservableObject {
     @Published var recordings: [AudioRecording] = []
     @Published var isLoading: Bool = false
+    var audioService = AudioService.shared
     
     let apiService: APIManageable
     
