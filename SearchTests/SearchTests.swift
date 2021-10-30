@@ -37,6 +37,8 @@ class SearchTests: XCTestCase {
         let recordings = sut.recordings
         
         XCTAssertEqual(service.search(for: .constant("john"), in: recordings, recordingType: .outgoing), [])
+        
+        XCTAssertEqual(service.search(for: .constant("paul"), in: recordings, recordingType: .incoming), [])
     }
     
     var sut: (service: SearchService, recordings: [AudioRecording]) {
