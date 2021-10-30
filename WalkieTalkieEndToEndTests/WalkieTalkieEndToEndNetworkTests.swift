@@ -1,6 +1,6 @@
 //
-//  WalkieTalkieEndToEndTests.swift
-//  WalkieTalkieEndToEndTests
+//  WalkieTalkieEndToEndNetworkTests.swift
+//  WalkieTalkieEndToEndNetworkTests
 //
 //  Created by Kenneth Dubroff on 10/30/21.
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import WalkieTalkie
 
-class WalkieTalkieEndToEndTests: XCTestCase {
+class WalkieTalkieEndToEndNetworkTests: XCTestCase {
 
     func testHistoryURL_completesData() {
         let request = GetRecordingRequest()
