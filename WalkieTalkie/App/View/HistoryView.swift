@@ -10,7 +10,7 @@ import SwiftUI
 struct HistoryView: View {
     @ObservedObject var viewModel: AudioRecordingViewModel
     @State private var searchText = ""
-    @State private var isSearching = false    
+    @State private var isSearching = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -21,14 +21,10 @@ struct HistoryView: View {
                 }
                 // MARK: Empty View
                 if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
-                    Spacer()
-                    
                     Text("Audio Recordings will appear here when you have history to show")
                         .font(.title)
                         .padding(.horizontal, 20)
                         .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                    
-                    Spacer()
                 }
                 
                 NavigationView {
@@ -36,17 +32,12 @@ struct HistoryView: View {
                         SearchBar(searchText: $searchText, isSearching: $isSearching)
                         
                         List {
+                            let searchService = SearchService()
                             // MARK: - Incoming Recordings -
                             if !viewModel.incomingRecordings.isEmpty {
                                 Section(header: Text("Incoming Recordings")) {
-                                    
-                                    let filteredIncomingRecordings = viewModel.incomingRecordings.filter {
-                                        let fromUsername = $0.usernameFrom ?? ""
-                                        
-                                        return fromUsername.lowercased().contains(searchText.lowercased())
-                                        
-                                    }
-                                    
+                                    let filteredIncomingRecordings = searchService.search(for: $searchText, in: viewModel.incomingRecordings, recordingType: .incoming)
+
                                     let incomingRecordings = filteredIncomingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredIncomingRecordings
                                     
                                     ForEach(incomingRecordings) { recording in
@@ -60,9 +51,7 @@ struct HistoryView: View {
                                 Section(header: Text("Outgoing Recordings")) {
                                     
                                     let filteredOutgoingRecordings =
-                                    viewModel.outgoingRecordings.filter {
-                                        $0.usernameTo.lowercased().contains(searchText.lowercased())
-                                    }
+                                    searchService.search(for: $searchText, in: viewModel.outgoingRecordings, recordingType: .outgoing)
                                     
                                     let outgoingRecordings = filteredOutgoingRecordings.isEmpty && isSearching == false ?
                                     viewModel.outgoingRecordings : filteredOutgoingRecordings
