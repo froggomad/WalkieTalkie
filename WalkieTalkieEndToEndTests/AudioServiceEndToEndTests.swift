@@ -6,17 +6,18 @@
 //
 
 import XCTest
-import AVFoundation
+@testable import WalkieTalkie
 
 class AudioServiceEndToEndTests: XCTestCase {
 
     func testAudioServiceCanPlayURL() {
         let url = URL(string: "localhost:3000/recordings/example_transmission.mp3")!
-        let avPlayer = AVPlayer(url: url)
+        let avPlayer = AudioService()
+        avPlayer.url = url
         avPlayer.play()
-        XCTAssertNil(avPlayer.error)
-        XCTAssertNotEqual(avPlayer.status, .failed)
-        avPlayer.pause()
+        XCTAssertNil(avPlayer.player?.error)
+        XCTAssertNotEqual(avPlayer.player?.status, .failed)
+        avPlayer.player?.pause()
     }
 
 }
