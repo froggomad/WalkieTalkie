@@ -7,12 +7,16 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: Error, Equatable {
     case invalidURL
     case badRequest
     case badResponse(statusCode: Int?)
     case noData
     case error(Error)
+    
+    static func == (lhs: NetworkError, rhs: NetworkError) -> Bool {
+        lhs.localizedDescription == rhs.localizedDescription
+    }
 }
 
 protocol Requestable {
