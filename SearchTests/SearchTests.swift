@@ -6,7 +6,6 @@
 //
 
 import XCTest
-import SwiftUI
 @testable import WalkieTalkie
 
 class SearchTests: XCTestCase {
