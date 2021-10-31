@@ -33,6 +33,7 @@ struct SearchBar: View {
                     textFieldId = UUID().uuidString
                 }
                 .padding(.trailing, 12)
+                .foregroundColor(ColorSheet.lightText)
             }
         }
     }
