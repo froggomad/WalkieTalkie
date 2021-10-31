@@ -22,6 +22,7 @@ struct PlayButton: View {
                 Image(systemName: "play.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50, alignment: .center)
+                    .foregroundColor(ColorSheet.actionColor)
             }
         } else {
             Button {

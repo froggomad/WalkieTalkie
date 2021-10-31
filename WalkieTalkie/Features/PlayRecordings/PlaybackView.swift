@@ -12,29 +12,36 @@ struct PlaybackView: View {
     @Binding var audioService: AudioService
     
     var body: some View {
-        VStack {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text(recording.recording)
-                        .fontWeight(.semibold)
-                    Text(recording.usernameFrom ?? "")
-                        .font(.callout)
+        ZStack {
+            ColorSheet.primaryColor
+                .ignoresSafeArea()
+            VStack {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Text(recording.recording)
+                            .fontWeight(.semibold)
+                        Text(recording.usernameFrom ?? "")
+                            .font(.callout)
+                    }
+                    .foregroundColor(ColorSheet.lightText)
+                    PlayButton(audioService: audioService, recording: recording)
                 }
-                PlayButton(audioService: audioService, recording: recording)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 80)
+                .onDisappear {
+                    audioService.pause()
+                }
+                Spacer()
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 80)
-            .navigationTitle(Text(recording.timestamp, style: .date))
-            .onDisappear {
-                audioService.pause()
-            }
-            Spacer()
         }
+        .navigationTitle(Text(recording.timestamp, style: .date))
+        .navigationBarTitleTextColor(ColorSheet.lightText)
     }
 }
 
 struct PlaybackRecordingView_Previews: PreviewProvider {
     static var previews: some View {
         PlaybackView(recording: .previewRecording, audioService: .constant(.init()))
+        
     }
 }
