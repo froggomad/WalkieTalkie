@@ -7,12 +7,12 @@
 import Foundation
 import SwiftUI
 
-class SearchService {
-    enum RecordingType {
-        case incoming
-        case outgoing
-    }
-    
+enum RecordingType: String {
+    case incoming
+    case outgoing
+}
+
+class SearchService {    
     func search(for searchText: Binding<String>, in searchArray: [AudioRecording], recordingType: RecordingType) -> [AudioRecording] {
         switch recordingType {
         case .incoming:
@@ -22,7 +22,7 @@ class SearchService {
             }
         case .outgoing:
             return searchArray.filter {
-                $0.usernameTo.lowercased().contains(searchText.wrappedValue.lowercased())                
+                $0.usernameTo.lowercased().contains(searchText.wrappedValue.lowercased())
             }
         }
         
