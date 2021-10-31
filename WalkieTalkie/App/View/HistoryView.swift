@@ -33,24 +33,25 @@ struct HistoryView: View {
                                 .padding(.horizontal, 20)
                                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                                 .foregroundColor(ColorSheet.lightText)
-                        }
-                        SearchBar(searchText: $searchText, isSearching: $isSearching)
-                        
-                        List {
-                            // MARK: - Incoming Recordings -
-                            if !viewModel.incomingRecordings.isEmpty {
-                                SectionView(recordingType: .incoming, searchText: $searchText, viewModel: .constant(viewModel), isSearching: $isSearching)
-                            }
+                        } else {
+                            SearchBar(searchText: $searchText, isSearching: $isSearching)
                             
-                            // MARK: - Outgoing Recordings -
-                            if !viewModel.outgoingRecordings.isEmpty {
-                                SectionView(recordingType: .outgoing, searchText: $searchText, viewModel: .constant(viewModel), isSearching: $isSearching)
+                            List {
+                                // MARK: - Incoming Recordings -
+                                if !viewModel.incomingRecordings.isEmpty {
+                                    SectionView(recordingType: .incoming, searchText: $searchText, viewModel: .constant(viewModel), isSearching: $isSearching)
+                                }
+                                
+                                // MARK: - Outgoing Recordings -
+                                if !viewModel.outgoingRecordings.isEmpty {
+                                    SectionView(recordingType: .outgoing, searchText: $searchText, viewModel: .constant(viewModel), isSearching: $isSearching)
+                                }
                             }
+                            .navigationTitle("History")
+                            .navigationBarTitleTextColor(ColorSheet.lightText)
+                            // set section dropdown arrow color
+                            .accentColor(ColorSheet.actionColor)
                         }
-                        .navigationTitle("History")
-                        .navigationBarTitleTextColor(ColorSheet.lightText)
-                        // set section dropdown arrow
-                        .accentColor(ColorSheet.actionColor)
                         
                     }
                 }
