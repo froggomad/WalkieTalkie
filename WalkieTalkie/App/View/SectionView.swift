@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SectionView: View {
     @State var recordingType: RecordingType
-    @State var searchText: String
+    @Binding var searchText: String
     @State var viewModel: AudioRecordingViewModel
     @State var isSearching: Bool
     @State var searchService: SearchService = .init()
@@ -27,7 +27,7 @@ struct SectionView: View {
                 let filteredRecordings = filteredIncomingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredIncomingRecordings
                 
                 ForEach(filteredRecordings) { recording in
-                    NavigationLink(destination: PlaybackView(recording: recording, audioService: $viewModel.audioService)) {
+                    NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService)) {
                         RecordingRow(audioService: viewModel.audioService, recording: recording)
                     }
                 }
@@ -39,7 +39,7 @@ struct SectionView: View {
                 viewModel.outgoingRecordings : filteredOutgoingRecordings
                 
                 ForEach(filteredRecordings) { recording in
-                    NavigationLink(destination: PlaybackView(recording: recording, audioService: $viewModel.audioService)) {
+                    NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService)) {
                         RecordingRow(audioService: viewModel.audioService, recording: recording)
                     }
                 }
@@ -50,6 +50,6 @@ struct SectionView: View {
 
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
-        SectionView(recordingType: .outgoing, searchText: "", viewModel: AudioRecordingViewModel(audioService: AudioService()), isSearching: true)
+        SectionView(recordingType: .outgoing, searchText: .constant(""), viewModel: AudioRecordingViewModel(audioService: AudioService()), isSearching: true)
     }
 }

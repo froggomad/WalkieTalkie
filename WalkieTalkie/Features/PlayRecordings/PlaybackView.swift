@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlaybackView: View {
     @State var recording: AudioRecording
-    @Binding var audioService: AudioService
+    @State var audioService: AudioService
     
     var body: some View {
         ZStack {
@@ -40,7 +40,7 @@ struct PlaybackView: View {
 
 struct PlaybackRecordingView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaybackView(recording: .previewRecording, audioService: .constant(.init()))
+        PlaybackView(recording: .previewRecording, audioService: .init())
         
     }
 }
