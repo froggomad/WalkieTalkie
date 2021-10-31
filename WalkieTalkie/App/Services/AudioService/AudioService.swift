@@ -7,8 +7,10 @@
 
 import Foundation
 import AVFoundation
+import SwiftUI
 
 class AudioService {
+    @Published var isPaused: Bool = false
     
     var url: URL? {
         didSet {
@@ -22,6 +24,11 @@ class AudioService {
     func play() {
         player?.volume = 1.0
         player?.play()
+    }
+    
+    func pause() {
+        isPaused = true
+        player?.pause()
     }
     
     func playerLayer() -> AVPlayerLayer {
