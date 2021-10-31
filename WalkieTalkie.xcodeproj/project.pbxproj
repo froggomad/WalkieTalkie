@@ -30,6 +30,8 @@
 		AAC0EB18272DE86200B28123 /* example_recording.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC0EB17272DE86200B28123 /* example_recording.mp3 */; };
 		AAC0EB19272DE86F00B28123 /* example_recording.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC0EB17272DE86200B28123 /* example_recording.mp3 */; };
 		AAC0EB21272DEC1700B28123 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB20272DEC1700B28123 /* SearchTests.swift */; };
+		AAC0EB2B272E3AA200B28123 /* PlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB2A272E3AA200B28123 /* PlaybackView.swift */; };
+		AAC0EB2F272E3CE100B28123 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB2E272E3CE100B28123 /* PlayButton.swift */; };
 		AAD3097D272C7FE9000D51E5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3097C272C7FE9000D51E5 /* SearchBar.swift */; };
 		AAD30981272C99DC000D51E5 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD30980272C99DC000D51E5 /* SearchService.swift */; };
 		AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */; };
@@ -95,6 +97,8 @@
 		AAC0EB17272DE86200B28123 /* example_recording.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example_recording.mp3; sourceTree = "<group>"; };
 		AAC0EB1E272DEC1700B28123 /* SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0EB20272DEC1700B28123 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
+		AAC0EB2A272E3AA200B28123 /* PlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackView.swift; sourceTree = "<group>"; };
+		AAC0EB2E272E3CE100B28123 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		AAD3097C272C7FE9000D51E5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AAD30980272C99DC000D51E5 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButtonViewModifier.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 		AA19D505272A074F00CFD6D8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AAC0EB29272E3A7700B28123 /* PlayRecordings */,
 				AAD30979272C7FC8000D51E5 /* Search */,
 				AA19D504272A073E00CFD6D8 /* ListRecordings */,
 			);
@@ -336,6 +341,15 @@
 				AAC0EB20272DEC1700B28123 /* SearchTests.swift */,
 			);
 			path = SearchTests;
+			sourceTree = "<group>";
+		};
+		AAC0EB29272E3A7700B28123 /* PlayRecordings */ = {
+			isa = PBXGroup;
+			children = (
+				AAC0EB2A272E3AA200B28123 /* PlaybackView.swift */,
+				AAC0EB2E272E3CE100B28123 /* PlayButton.swift */,
+			);
+			path = PlayRecordings;
 			sourceTree = "<group>";
 		};
 		AAD30979272C7FC8000D51E5 /* Search */ = {
@@ -566,9 +580,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */,
+				AAC0EB2F272E3CE100B28123 /* PlayButton.swift in Sources */,
 				AA19D503272A04FE00CFD6D8 /* AudioRecording.swift in Sources */,
 				AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */,
 				AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */,
+				AAC0EB2B272E3AA200B28123 /* PlaybackView.swift in Sources */,
 				AA19D4FF272A036900CFD6D8 /* DataParsable.swift in Sources */,
 				AA19D4FB272A024E00CFD6D8 /* APIConstants.swift in Sources */,
 				AAD30981272C99DC000D51E5 /* SearchService.swift in Sources */,
