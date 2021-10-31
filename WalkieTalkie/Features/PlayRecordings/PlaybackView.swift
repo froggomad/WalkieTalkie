@@ -35,7 +35,6 @@ struct PlaybackView: View {
             }
         }
         .navigationTitle(Text(recording.timestamp, style: .date))
-        .navigationBarTitleTextColor(ColorSheet.lightText)
     }
 }
 
