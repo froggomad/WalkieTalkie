@@ -32,6 +32,8 @@
 		AAC0EB21272DEC1700B28123 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB20272DEC1700B28123 /* SearchTests.swift */; };
 		AAC0EB2B272E3AA200B28123 /* PlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB2A272E3AA200B28123 /* PlaybackView.swift */; };
 		AAC0EB2F272E3CE100B28123 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB2E272E3CE100B28123 /* PlayButton.swift */; };
+		AAD14346272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD14345272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift */; };
+		AAD14348272EF51700AE3855 /* ColorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD14347272EF51700AE3855 /* ColorSheet.swift */; };
 		AAD3097D272C7FE9000D51E5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3097C272C7FE9000D51E5 /* SearchBar.swift */; };
 		AAD30981272C99DC000D51E5 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD30980272C99DC000D51E5 /* SearchService.swift */; };
 		AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */; };
@@ -99,6 +101,8 @@
 		AAC0EB20272DEC1700B28123 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
 		AAC0EB2A272E3AA200B28123 /* PlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackView.swift; sourceTree = "<group>"; };
 		AAC0EB2E272E3CE100B28123 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		AAD14345272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+navigationBarTitleTextColor.swift"; sourceTree = "<group>"; };
+		AAD14347272EF51700AE3855 /* ColorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSheet.swift; sourceTree = "<group>"; };
 		AAD3097C272C7FE9000D51E5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AAD30980272C99DC000D51E5 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButtonViewModifier.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 			children = (
 				AA19D502272A04FE00CFD6D8 /* AudioRecording.swift */,
 				AAD9EC40272C4F2E0099A562 /* User.swift */,
+				AAD14345272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift */,
+				AAD14347272EF51700AE3855 /* ColorSheet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -582,9 +588,11 @@
 				AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */,
 				AAC0EB2F272E3CE100B28123 /* PlayButton.swift in Sources */,
 				AA19D503272A04FE00CFD6D8 /* AudioRecording.swift in Sources */,
+				AAD14346272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift in Sources */,
 				AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */,
 				AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */,
 				AAC0EB2B272E3AA200B28123 /* PlaybackView.swift in Sources */,
+				AAD14348272EF51700AE3855 /* ColorSheet.swift in Sources */,
 				AA19D4FF272A036900CFD6D8 /* DataParsable.swift in Sources */,
 				AA19D4FB272A024E00CFD6D8 /* APIConstants.swift in Sources */,
 				AAD30981272C99DC000D51E5 /* SearchService.swift in Sources */,
