@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SectionView: View {
     @State var recordingType: RecordingType
-    @Binding var searchText: String
-    @Binding var viewModel: AudioRecordingViewModel
-    @Binding var isSearching: Bool
+    @State var searchText: String
+    @State var viewModel: AudioRecordingViewModel
+    @State var isSearching: Bool
     @State var searchService: SearchService = .init()
     
     var recordingText: String {
@@ -50,6 +50,6 @@ struct SectionView: View {
 
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
-        SectionView(recordingType: .outgoing, searchText: .constant(""), viewModel: .constant(AudioRecordingViewModel(audioService: AudioService())), isSearching: .constant(true))
+        SectionView(recordingType: .outgoing, searchText: "", viewModel: AudioRecordingViewModel(audioService: AudioService()), isSearching: true)
     }
 }

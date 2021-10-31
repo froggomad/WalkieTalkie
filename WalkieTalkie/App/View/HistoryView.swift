@@ -39,12 +39,12 @@ struct HistoryView: View {
                             List {
                                 // MARK: - Incoming Recordings -
                                 if !viewModel.incomingRecordings.isEmpty {
-                                    SectionView(recordingType: .incoming, searchText: $searchText, viewModel: .constant(viewModel), isSearching: $isSearching)
+                                    SectionView(recordingType: .incoming, searchText: searchText, viewModel: viewModel, isSearching: isSearching)
                                 }
                                 
                                 // MARK: - Outgoing Recordings -
                                 if !viewModel.outgoingRecordings.isEmpty {
-                                    SectionView(recordingType: .outgoing, searchText: $searchText, viewModel: .constant(viewModel), isSearching: $isSearching)
+                                    SectionView(recordingType: .outgoing, searchText: searchText, viewModel: viewModel, isSearching: isSearching)
                                 }
                             }
                             .navigationTitle("History")
