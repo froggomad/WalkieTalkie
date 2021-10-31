@@ -11,7 +11,7 @@ struct AudioRecording: Codable, Identifiable, Equatable {
     let id: Int
     let usernameFrom: String?
     let usernameTo: String
-    let timestamp: Date
+    var timestamp: Date
     let recording: String
     
     var url: URL {
