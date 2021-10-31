@@ -37,42 +37,20 @@ struct HistoryView: View {
                         SearchBar(searchText: $searchText, isSearching: $isSearching)
                         
                         List {
-                            let searchService = SearchService()
                             // MARK: - Incoming Recordings -
                             if !viewModel.incomingRecordings.isEmpty {
-                                Section(header: Text("Incoming Recordings")) {
-                                    let filteredIncomingRecordings = searchService.search(for: $searchText, in: viewModel.incomingRecordings, recordingType: .incoming)
-                                    
-                                    let incomingRecordings = filteredIncomingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredIncomingRecordings
-                                    
-                                    ForEach(incomingRecordings) { recording in
-                                        NavigationLink(destination: PlaybackView(recording: recording, audioService: $viewModel.audioService)) {
-                                            RecordingRow(audioService: viewModel.audioService, recording: recording)
-                                        }
-                                    }
-                                }
+                                SectionView(recordingType: .incoming, searchText: $searchText, viewModel: .constant(viewModel), isSearching: $isSearching)
                             }
                             
                             // MARK: - Outgoing Recordings -
                             if !viewModel.outgoingRecordings.isEmpty {
-                                Section(header: Text("Outgoing Recordings")) {
-                                    
-                                    let filteredOutgoingRecordings =
-                                    searchService.search(for: $searchText, in: viewModel.outgoingRecordings, recordingType: .outgoing)
-                                    
-                                    let outgoingRecordings = filteredOutgoingRecordings.isEmpty && isSearching == false ?
-                                    viewModel.outgoingRecordings : filteredOutgoingRecordings
-                                    
-                                    ForEach(outgoingRecordings) { recording in
-                                        NavigationLink(destination: PlaybackView(recording: recording, audioService: $viewModel.audioService)) {
-                                            RecordingRow(audioService: viewModel.audioService, recording: recording)
-                                        }
-                                    }
-                                }
+                                SectionView(recordingType: .outgoing, searchText: $searchText, viewModel: .constant(viewModel), isSearching: $isSearching)
                             }
                         }
                         .navigationTitle("History")
                         .navigationBarTitleTextColor(ColorSheet.lightText)
+                        // set section dropdown arrow
+                        .accentColor(ColorSheet.actionColor)
                         
                     }
                 }
