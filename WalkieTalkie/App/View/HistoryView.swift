@@ -8,27 +8,32 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @ObservedObject var viewModel: AudioRecordingViewModel
+    @ObservedObject var viewModel: AudioRecordingViewModel = .init(audioService: AudioService())
     @State private var searchText = ""
     @State private var isSearching = false
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                if viewModel.isLoading {
-                    ProgressView("loading...")
-                        .padding(.top, 20)
-                }
-                // MARK: Empty View
-                if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
-                    Text("Audio Recordings will appear here when you have history to show")
-                        .font(.title)
-                        .padding(.horizontal, 20)
-                        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                }
-                
-                NavigationView {
+        NavigationView {
+            ZStack {
+                ColorSheet.primaryColor
+                    .ignoresSafeArea()
+                GeometryReader { geometry in
                     VStack {
+                        // MARK: Loading View
+                        if viewModel.isLoading {
+                            ProgressView("loading...")
+                                .padding(.top, 20)
+                                .foregroundColor(ColorSheet.lightText)
+                                .progressViewStyle(CircularProgressViewStyle(tint: ColorSheet.lightText))
+                        }
+                        // MARK: Empty View
+                        if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
+                            Text("Audio Recordings will appear here when you have history to show")
+                                .font(.title)
+                                .padding(.horizontal, 20)
+                                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                                .foregroundColor(ColorSheet.lightText)
+                        }
                         SearchBar(searchText: $searchText, isSearching: $isSearching)
                         
                         List {
@@ -37,11 +42,13 @@ struct HistoryView: View {
                             if !viewModel.incomingRecordings.isEmpty {
                                 Section(header: Text("Incoming Recordings")) {
                                     let filteredIncomingRecordings = searchService.search(for: $searchText, in: viewModel.incomingRecordings, recordingType: .incoming)
-
+                                    
                                     let incomingRecordings = filteredIncomingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredIncomingRecordings
                                     
                                     ForEach(incomingRecordings) { recording in
-                                        RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                        NavigationLink(destination: PlaybackView(recording: recording, audioService: $viewModel.audioService)) {
+                                            RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                        }
                                     }
                                 }
                             }
@@ -57,16 +64,23 @@ struct HistoryView: View {
                                     viewModel.outgoingRecordings : filteredOutgoingRecordings
                                     
                                     ForEach(outgoingRecordings) { recording in
-                                        RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                        NavigationLink(destination: PlaybackView(recording: recording, audioService: $viewModel.audioService)) {
+                                            RecordingRow(audioService: viewModel.audioService, recording: recording)
+                                        }
                                     }
                                 }
                             }
                         }
+                        .navigationTitle("History")
+                        .navigationBarTitleTextColor(ColorSheet.lightText)
+                        
                     }
                 }
+                
             }
-            
         }
+        // set back button color on destination view
+        .accentColor(ColorSheet.lightText)
     }
 }
 
