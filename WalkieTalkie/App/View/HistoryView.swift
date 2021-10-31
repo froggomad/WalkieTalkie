@@ -48,7 +48,6 @@ struct HistoryView: View {
                                 }
                             }
                             .navigationTitle("History")
-                            .navigationBarTitleTextColor(ColorSheet.lightText)
                             // set section dropdown arrow color
                             .accentColor(ColorSheet.actionColor)
                         }
@@ -58,6 +57,7 @@ struct HistoryView: View {
                 
             }
         }
+        .navigationBarTitleTextColor(ColorSheet.lightText)
         // set back button color on destination view
         .accentColor(ColorSheet.lightText)
     }
