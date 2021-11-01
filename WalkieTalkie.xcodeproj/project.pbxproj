@@ -23,6 +23,7 @@
 		AA19D509272A133A00CFD6D8 /* AudioRecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */; };
 		AA19D50B272A150B00CFD6D8 /* RecordingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */; };
 		AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D51A272A617100CFD6D8 /* AudioService.swift */; };
+		AABE5AAE273054FC0081D877 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AAD273054FC0081D877 /* RefreshView.swift */; };
 		AAC0EAF9272DD09700B28123 /* DataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EAF8272DD09700B28123 /* DataParserTests.swift */; };
 		AAC0EB01272DD4C300B28123 /* WalkieTalkieEndToEndNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB00272DD4C300B28123 /* WalkieTalkieEndToEndNetworkTests.swift */; };
 		AAC0EB0E272DE45C00B28123 /* AudioServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB0D272DE45C00B28123 /* AudioServiceTests.swift */; };
@@ -92,6 +93,7 @@
 		AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRow.swift; sourceTree = "<group>"; };
 		AA19D51A272A617100CFD6D8 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		AABE5AA727304C6E0081D877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AABE5AAD273054FC0081D877 /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		AAC0EAF8272DD09700B28123 /* DataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParserTests.swift; sourceTree = "<group>"; };
 		AAC0EAFE272DD4C300B28123 /* WalkieTalkieEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkieTalkieEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0EB00272DD4C300B28123 /* WalkieTalkieEndToEndNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkieTalkieEndToEndNetworkTests.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		AA19D505272A074F00CFD6D8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AABE5AAC273054F00081D877 /* PullToRefresh */,
 				AAC0EB29272E3A7700B28123 /* PlayRecordings */,
 				AAD30979272C7FC8000D51E5 /* Search */,
 				AA19D504272A073E00CFD6D8 /* History */,
@@ -310,6 +313,14 @@
 				AA19D51A272A617100CFD6D8 /* AudioService.swift */,
 			);
 			path = AudioService;
+			sourceTree = "<group>";
+		};
+		AABE5AAC273054F00081D877 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				AABE5AAD273054FC0081D877 /* RefreshView.swift */,
+			);
+			path = PullToRefresh;
 			sourceTree = "<group>";
 		};
 		AAC0EAFF272DD4C300B28123 /* WalkieTalkieEndToEndTests */ = {
@@ -588,6 +599,7 @@
 				AAD14346272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift in Sources */,
 				AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */,
 				AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */,
+				AABE5AAE273054FC0081D877 /* RefreshView.swift in Sources */,
 				AAC0EB2B272E3AA200B28123 /* PlaybackView.swift in Sources */,
 				AAD14348272EF51700AE3855 /* ColorSheet.swift in Sources */,
 				AAD1434A272F3E9E00AE3855 /* SectionView.swift in Sources */,

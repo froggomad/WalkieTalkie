@@ -38,6 +38,11 @@ struct HistoryView: View {
                             SearchBar(searchText: $searchText, isSearching: $isSearching)
                             
                             List {
+                                Section(header: RefreshView(coordinateSpace: .named("refresh_history")) {
+                                    viewModel.loadRecordingsFromAPI()
+                                }) {}
+                                
+                                
                                 // MARK: - Incoming Recordings -
                                 if !viewModel.incomingRecordings.isEmpty {
                                     SectionView(recordingType: .incoming, searchText: $searchText, viewModel: viewModel, isSearching: $isSearching)
@@ -48,6 +53,7 @@ struct HistoryView: View {
                                     SectionView(recordingType: .outgoing, searchText: $searchText, viewModel: viewModel, isSearching: $isSearching)
                                 }
                             }
+                            
                             .navigationTitle("History")
                             // set section dropdown arrow color
                             .accentColor(ColorSheet.actionColor)
