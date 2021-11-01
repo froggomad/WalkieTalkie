@@ -26,5 +26,6 @@ public struct ClearButton: ViewModifier {
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
+        .accessibilityLabel("clear button")
     }
 }

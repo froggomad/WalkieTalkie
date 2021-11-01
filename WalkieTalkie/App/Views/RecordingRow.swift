@@ -24,9 +24,11 @@ struct RecordingRow: View {
             VStack(alignment: .leading) {
                 Text(recording.recording)
                     .font(.subheadline)
+                    .accessibilityLabel("file name: \(recording.recording)")
                 Text("From: \(recording.usernameFrom ?? "Anonymous")")
                     .font(.body)
                     .fontWeight(.semibold)
+                    .accessibilityLabel("from user \(recording.usernameFrom ?? "Anonymous")")
             }
         }
         

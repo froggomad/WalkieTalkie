@@ -20,8 +20,10 @@ struct PlaybackView: View {
                     VStack(alignment: .leading) {
                         Text(recording.recording)
                             .fontWeight(.semibold)
-                        Text(recording.usernameFrom ?? "")
+                            .accessibilityLabel("file name: \(recording.recording)")
+                        Text(recording.usernameFrom ?? "Anonymous")
                             .font(.callout)
+                            .accessibilityLabel("from user \(recording.usernameFrom ?? "Anonymous")")
                     }
                     .foregroundColor(ColorSheet.lightText)
                     PlayButton(audioService: audioService, recording: recording)
