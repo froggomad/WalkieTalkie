@@ -22,25 +22,25 @@ struct SectionView: View {
         Section(header: Text(recordingText)) {
             
             if recordingType == .incoming {
-                let filteredIncomingRecordings = searchService.search(for: $searchText, in: viewModel.incomingRecordings, recordingType: .incoming)
+                let filteredIncomingRecordings = searchService.search(for: $searchText, in: viewModel.incomingRecordings, recordingType: recordingType)
                 
                 let filteredRecordings = filteredIncomingRecordings.isEmpty && isSearching == false ? viewModel.incomingRecordings : filteredIncomingRecordings
                 
                 ForEach(filteredRecordings) { recording in
-                    NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService)) {
-                        RecordingRow(audioService: viewModel.audioService, recording: recording)
+                    NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService, recordingType: recordingType)) {
+                        RecordingRow(audioService: viewModel.audioService, recording: recording, recordingType: recordingType)
                     }
                 }
             } else {
                 let filteredOutgoingRecordings =
-                searchService.search(for: $searchText, in: viewModel.outgoingRecordings, recordingType: .outgoing)
+                searchService.search(for: $searchText, in: viewModel.outgoingRecordings, recordingType: recordingType)
                 
                 let filteredRecordings = filteredOutgoingRecordings.isEmpty && isSearching == false ?
                 viewModel.outgoingRecordings : filteredOutgoingRecordings
                 
                 ForEach(filteredRecordings) { recording in
-                    NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService)) {
-                        RecordingRow(audioService: viewModel.audioService, recording: recording)
+                    NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService, recordingType: recordingType)) {
+                        RecordingRow(audioService: viewModel.audioService, recording: recording, recordingType: recordingType)
                     }
                 }
             }

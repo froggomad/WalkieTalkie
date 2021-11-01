@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct PlaybackView: View {
+struct PlaybackView: View, ToFromUser {
     @State var recording: AudioRecording
     @State var audioService: AudioService
+    let recordingType: RecordingType
     
     var body: some View {
         ZStack {
@@ -21,9 +22,9 @@ struct PlaybackView: View {
                         Text(recording.url.lastPathComponent)
                             .fontWeight(.semibold)
                             .accessibilityLabel("file name: \(recording.url.lastPathComponent)")
-                        Text(recording.usernameFrom ?? "Anonymous")
+                        Text("\(toFromLabel)\(toFromUsername)")
                             .font(.callout)
-                            .accessibilityLabel("from user \(recording.usernameFrom ?? "Anonymous")")
+                            .accessibilityLabel("\(toFromLabel) user \(toFromUsername)")
                     }
                     .foregroundColor(ColorSheet.lightText)
                     PlayButton(audioService: audioService, recording: recording)
@@ -42,7 +43,7 @@ struct PlaybackView: View {
 
 struct PlaybackRecordingView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaybackView(recording: .previewRecording, audioService: .init())
+        PlaybackView(recording: .previewRecording, audioService: .init(), recordingType: .outgoing)
         
     }
 }
