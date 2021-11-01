@@ -18,7 +18,7 @@ struct PlaybackView: View {
             VStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text(recording.recording)
+                        Text(recording.url.lastPathComponent)
                             .fontWeight(.semibold)
                             .accessibilityLabel("file name: \(recording.url.lastPathComponent)")
                         Text(recording.usernameFrom ?? "Anonymous")
