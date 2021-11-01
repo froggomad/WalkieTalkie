@@ -8,11 +8,12 @@ Users can view history of messages they've sent and received. If a user is an ad
 
 ### Search
 Users can search through their recordings for a specfic username
-![Simulator Screen Shot - iPhone 12 - 2021-11-01 at 13 16 58](https://user-images.githubusercontent.com/28037692/139736001-90e3d5b6-f920-43ae-beda-52046c98d6e4.png)
+![search](https://user-images.githubusercontent.com/28037692/139736001-90e3d5b6-f920-43ae-beda-52046c98d6e4.png)
 
 ### Playback
 Users can playback recordings in the app
-![Simulator Screen Shot - iPhone 12 - 2021-11-01 at 13 17 58](https://user-images.githubusercontent.com/28037692/139736128-14df937d-48b5-4568-ac53-92557830734b.png)
+![playback audio](https://user-images.githubusercontent.com/28037692/139736128-14df937d-48b5-4568-ac53-92557830734b.png)
 
 ### Pull to refresh
 The project is using a native SwiftUI solution to implement Pull To Refresh
+![pull_to_refresh](https://user-images.githubusercontent.com/28037692/139737498-8e6af25a-4892-4988-a3d7-14e8cc5ac2e0.gif)
