@@ -15,7 +15,7 @@ struct SectionView: View {
     @State var searchService: SearchService = .init()
     
     var recordingText: String {
-        "\(recordingType.rawValue.capitalized) Recordings"
+        NSLocalizedString("\(recordingType.rawValue.capitalized) Recordings", comment: "History list section label")
     }
     
     var body: some View {
