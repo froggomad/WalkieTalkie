@@ -22,9 +22,9 @@ struct RecordingRow: View {
                 .frame(width: width, height: height)
                 .foregroundColor(ColorSheet.actionColor)
             VStack(alignment: .leading) {
-                Text(recording.recording)
+                Text(recording.url.lastPathComponent)
                     .font(.subheadline)
-                    .accessibilityLabel("file name: \(recording.recording)")
+                    .accessibilityLabel("file name: \(recording.url.lastPathComponent)")
                 Text("From: \(recording.usernameFrom ?? "Anonymous")")
                     .font(.body)
                     .fontWeight(.semibold)
