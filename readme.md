@@ -16,4 +16,5 @@ Users can playback recordings in the app
 
 ### Pull to refresh
 The project is using a native SwiftUI solution to implement Pull To Refresh
+
 ![pull_to_refresh](https://user-images.githubusercontent.com/28037692/139737498-8e6af25a-4892-4988-a3d7-14e8cc5ac2e0.gif)
