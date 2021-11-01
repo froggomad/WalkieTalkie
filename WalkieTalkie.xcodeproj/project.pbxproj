@@ -264,13 +264,13 @@
 			path = "Data Parsing";
 			sourceTree = "<group>";
 		};
-		AA19D504272A073E00CFD6D8 /* ListRecordings */ = {
+		AA19D504272A073E00CFD6D8 /* History */ = {
 			isa = PBXGroup;
 			children = (
 				AA19D510272A4B0000CFD6D8 /* Views */,
 				AA19D50C272A37C300CFD6D8 /* Service */,
 			);
-			path = ListRecordings;
+			path = History;
 			sourceTree = "<group>";
 		};
 		AA19D505272A074F00CFD6D8 /* Features */ = {
@@ -278,7 +278,7 @@
 			children = (
 				AAC0EB29272E3A7700B28123 /* PlayRecordings */,
 				AAD30979272C7FC8000D51E5 /* Search */,
-				AA19D504272A073E00CFD6D8 /* ListRecordings */,
+				AA19D504272A073E00CFD6D8 /* History */,
 			);
 			path = Features;
 			sourceTree = "<group>";
