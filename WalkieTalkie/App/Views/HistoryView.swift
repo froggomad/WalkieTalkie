@@ -29,10 +29,11 @@ struct HistoryView: View {
                         // MARK: Empty View
                         if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
                             Text("Audio Recordings will appear here when you have history to show")
-                                .font(.title)
-                                .padding(.horizontal, 20)
-                                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                                .foregroundColor(ColorSheet.lightText)
+                            .font(.title)
+                            .padding(.horizontal, 20)
+                            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                            .foregroundColor(ColorSheet.lightText)
+                            .multilineTextAlignment(.center)
                         } else {
                             SearchBar(searchText: $searchText, isSearching: $isSearching)
                             
