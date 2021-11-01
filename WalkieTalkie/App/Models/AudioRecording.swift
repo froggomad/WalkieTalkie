@@ -15,7 +15,7 @@ struct AudioRecording: Codable, Identifiable, Equatable {
     let recording: String
     
     var url: URL {
-        return URL(string: "http://localhost:3000/recordings/example_transmission.mp3")!
+        return URL(string: "http://\(APIConstants.host):\(APIConstants.port)\(recording)")!
     }
     
     init(id: Int, usernameFrom: String?, usernameTo: String, timestamp: Date, recording: String) {
