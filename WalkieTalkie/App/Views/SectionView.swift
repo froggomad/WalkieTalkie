@@ -11,7 +11,7 @@ struct SectionView: View {
     @State var recordingType: RecordingType
     @Binding var searchText: String
     @State var viewModel: AudioRecordingViewModel
-    @State var isSearching: Bool
+    @Binding var isSearching: Bool
     @State var searchService: SearchService = .init()
     
     var recordingText: String {
@@ -50,6 +50,6 @@ struct SectionView: View {
 
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
-        SectionView(recordingType: .outgoing, searchText: .constant(""), viewModel: MockAudioRecordingViewModel(), isSearching: false)
+        SectionView(recordingType: .outgoing, searchText: .constant(""), viewModel: MockAudioRecordingViewModel(), isSearching: .constant(false))
     }
 }
