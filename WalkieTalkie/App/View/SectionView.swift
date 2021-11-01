@@ -50,6 +50,6 @@ struct SectionView: View {
 
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
-        SectionView(recordingType: .outgoing, searchText: .constant(""), viewModel: AudioRecordingViewModel(audioService: AudioService()), isSearching: true)
+        SectionView(recordingType: .outgoing, searchText: .constant(""), viewModel: MockAudioRecordingViewModel(), isSearching: false)
     }
 }
