@@ -203,7 +203,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		AA19D4EE2729F9F200CFD6D8 /* Model */ = {
+		AA19D4EE2729F9F200CFD6D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				AA19D502272A04FE00CFD6D8 /* AudioRecording.swift */,
@@ -211,7 +211,7 @@
 				AAD14345272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift */,
 				AAD14347272EF51700AE3855 /* ColorSheet.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AA19D4EF2729F9F900CFD6D8 /* ViewModel */ = {
@@ -226,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				AA19D4ED2729F9EA00CFD6D8 /* Services */,
-				AA19D4EE2729F9F200CFD6D8 /* Model */,
+				AA19D4EE2729F9F200CFD6D8 /* Models */,
 				AA19D4EF2729F9F900CFD6D8 /* ViewModel */,
 				AAC0EB16272DE83000B28123 /* Assets */,
 				AA19D4DF2729F95900CFD6D8 /* WalkieTalkieApp.swift */,
@@ -267,9 +267,8 @@
 		AA19D504272A073E00CFD6D8 /* ListRecordings */ = {
 			isa = PBXGroup;
 			children = (
-				AA19D510272A4B0000CFD6D8 /* View */,
+				AA19D510272A4B0000CFD6D8 /* Views */,
 				AA19D50C272A37C300CFD6D8 /* Service */,
-				AA19D50D272A37C900CFD6D8 /* View */,
 			);
 			path = ListRecordings;
 			sourceTree = "<group>";
@@ -292,22 +291,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		AA19D50D272A37C900CFD6D8 /* View */ = {
+		AA19D510272A4B0000CFD6D8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AA19D510272A4B0000CFD6D8 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				AA19D4E12729F95900CFD6D8 /* HistoryView.swift */,
 				AAD14349272F3E9E00AE3855 /* SectionView.swift */,
 			);
-			name = View;
-			path = ../../App/View;
+			name = Views;
+			path = ../../App/Views;
 			sourceTree = "<group>";
 		};
 		AA19D519272A616700CFD6D8 /* AudioService */ = {
@@ -365,18 +357,18 @@
 			isa = PBXGroup;
 			children = (
 				AAD3097F272C99C7000D51E5 /* Service */,
-				AAD3097E272C99C2000D51E5 /* View */,
+				AAD3097E272C99C2000D51E5 /* Views */,
 			);
 			path = Search;
 			sourceTree = "<group>";
 		};
-		AAD3097E272C99C2000D51E5 /* View */ = {
+		AAD3097E272C99C2000D51E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AAD3097C272C7FE9000D51E5 /* SearchBar.swift */,
 				AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AAD3097F272C99C7000D51E5 /* Service */ = {
