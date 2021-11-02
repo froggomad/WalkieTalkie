@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayButtonStyle: ButtonStyle {
+struct ScaleButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 1.5 : 1.0)
