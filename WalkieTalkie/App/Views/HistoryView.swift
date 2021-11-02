@@ -38,8 +38,10 @@ struct HistoryView: View {
                                     }
                                     .frame(width: 100, height: 33)
                                     .background(ColorSheet.actionColor)
+                                    .foregroundColor(.white)
                                     .cornerRadius(8)
                                     .padding(.top, 20)
+                                    .buttonStyle(ScaleButtonStyle())
                                 }
                                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                             } else {
