@@ -11,6 +11,7 @@ struct HistoryView: View {
     @ObservedObject var viewModel: AudioRecordingViewModel = .init(audioService: AudioService())
     @State private var searchText = ""
     @State private var isSearching = false
+    @State private var viewLoaded = false
     
     var body: some View {
         NavigationView {
@@ -20,11 +21,8 @@ struct HistoryView: View {
                 GeometryReader { geometry in
                     VStack {
                         // MARK: Loading View
-                        if viewModel.isLoading {
-                            ProgressView("loading...")
-                                .padding(.top, 20)
-                                .foregroundColor(ColorSheet.lightText)
-                                .progressViewStyle(CircularProgressViewStyle(tint: ColorSheet.lightText))
+                        if viewModel.isLoading && !viewLoaded {
+                            HistoryProgressView()
                         }
                         // MARK: Empty View
                         if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
@@ -35,15 +33,27 @@ struct HistoryView: View {
                                 .foregroundColor(ColorSheet.lightText)
                                 .multilineTextAlignment(.center)
                         } else {
+                            
                             SearchBar(searchText: $searchText, isSearching: $isSearching)
+                                .onAppear(perform: {
+                                    viewLoaded = true
+                                })
+                            
                             List {
+                                // refresh control
                                 Section(header: RefreshControl(coordinateSpace: .named("refresh_history")) {
                                     if !viewModel.isLoading {
                                         viewModel.loadRecordingsFromAPI()
                                     }
                                 }) {}
-                                .hidden()
-                                
+                                // refresh view
+                                if viewModel.isLoading {
+                                    HStack {
+                                        Spacer()
+                                        HistoryProgressView(color: .black)
+                                        Spacer()
+                                    }
+                                }
                                 // MARK: - Incoming Recordings -
                                 if !viewModel.incomingRecordings.isEmpty {
                                     SectionView(recordingType: .incoming, searchText: $searchText, viewModel: viewModel, isSearching: $isSearching)
@@ -54,7 +64,6 @@ struct HistoryView: View {
                                     SectionView(recordingType: .outgoing, searchText: $searchText, viewModel: viewModel, isSearching: $isSearching)
                                 }
                             }
-                            
                             .navigationTitle("History")
                             // set section dropdown arrow color
                             .accentColor(ColorSheet.actionColor)
