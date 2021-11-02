@@ -25,6 +25,7 @@
 		AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D51A272A617100CFD6D8 /* AudioService.swift */; };
 		AABE5AAE273054FC0081D877 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AAD273054FC0081D877 /* RefreshControl.swift */; };
 		AABE5AB127307F620081D877 /* ToFromUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AB027307F620081D877 /* ToFromUser.swift */; };
+		AABE5AB32730C3690081D877 /* HistoryProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AB22730C3690081D877 /* HistoryProgressView.swift */; };
 		AAC0EAF9272DD09700B28123 /* DataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EAF8272DD09700B28123 /* DataParserTests.swift */; };
 		AAC0EB01272DD4C300B28123 /* WalkieTalkieEndToEndNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB00272DD4C300B28123 /* WalkieTalkieEndToEndNetworkTests.swift */; };
 		AAC0EB0E272DE45C00B28123 /* AudioServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0EB0D272DE45C00B28123 /* AudioServiceTests.swift */; };
@@ -96,6 +97,7 @@
 		AABE5AA727304C6E0081D877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AABE5AAD273054FC0081D877 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		AABE5AB027307F620081D877 /* ToFromUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToFromUser.swift; sourceTree = "<group>"; };
+		AABE5AB22730C3690081D877 /* HistoryProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryProgressView.swift; sourceTree = "<group>"; };
 		AAC0EAF8272DD09700B28123 /* DataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParserTests.swift; sourceTree = "<group>"; };
 		AAC0EAFE272DD4C300B28123 /* WalkieTalkieEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkieTalkieEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0EB00272DD4C300B28123 /* WalkieTalkieEndToEndNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkieTalkieEndToEndNetworkTests.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
 				AA19D4E12729F95900CFD6D8 /* HistoryView.swift */,
 				AAD14349272F3E9E00AE3855 /* SectionView.swift */,
+				AABE5AB22730C3690081D877 /* HistoryProgressView.swift */,
 			);
 			name = Views;
 			path = ../../App/Views;
@@ -608,6 +611,7 @@
 				AAC0EB2F272E3CE100B28123 /* PlayButton.swift in Sources */,
 				AA19D503272A04FE00CFD6D8 /* AudioRecording.swift in Sources */,
 				AAD14346272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift in Sources */,
+				AABE5AB32730C3690081D877 /* HistoryProgressView.swift in Sources */,
 				AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */,
 				AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */,
 				AABE5AAE273054FC0081D877 /* RefreshControl.swift in Sources */,
