@@ -46,6 +46,7 @@ struct HistoryView: View {
                                         viewModel.loadRecordingsFromAPI()
                                     }
                                 }) {}
+                                .hidden()
                                 // refresh view
                                 if viewModel.isLoading {
                                     HStack {
