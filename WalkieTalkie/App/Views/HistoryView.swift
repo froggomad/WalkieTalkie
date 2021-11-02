@@ -36,12 +36,12 @@ struct HistoryView: View {
                             .multilineTextAlignment(.center)
                         } else {
                             SearchBar(searchText: $searchText, isSearching: $isSearching)
-                            
                             List {
-                                Section(header: RefreshView(coordinateSpace: .named("refresh_history")) {
-                                    viewModel.loadRecordingsFromAPI()
+                                Section(header: RefreshControl(coordinateSpace: .named("refresh_history")) {
+                                    if !viewModel.isLoading {
+                                        viewModel.loadRecordingsFromAPI()
+                                    }
                                 }) {}
-                                
                                 
                                 // MARK: - Incoming Recordings -
                                 if !viewModel.incomingRecordings.isEmpty {
