@@ -216,8 +216,8 @@
 			children = (
 				AA19D502272A04FE00CFD6D8 /* AudioRecording.swift */,
 				AAD9EC40272C4F2E0099A562 /* User.swift */,
-				AAD14345272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift */,
 				AAD14347272EF51700AE3855 /* ColorSheet.swift */,
+				AAD14345272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,11 +255,11 @@
 		AA19D4FC272A02F300CFD6D8 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				AA19D4F12729FA5E00CFD6D8 /* Requestable.swift */,
+				AA19D4FA272A024E00CFD6D8 /* APIConstants.swift */,
 				AA19D4F42729FAA300CFD6D8 /* RequestType.swift */,
+				AA19D4F12729FA5E00CFD6D8 /* Requestable.swift */,
 				AA19D4F62729FB1A00CFD6D8 /* APIManageable.swift */,
 				AA19D4F8272A022000CFD6D8 /* APIService.swift */,
-				AA19D4FA272A024E00CFD6D8 /* APIConstants.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -285,10 +285,10 @@
 		AA19D505272A074F00CFD6D8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AA19D504272A073E00CFD6D8 /* History */,
+				AAD30979272C7FC8000D51E5 /* Search */,
 				AABE5AAC273054F00081D877 /* PullToRefresh */,
 				AAC0EB29272E3A7700B28123 /* PlayRecordings */,
-				AAD30979272C7FC8000D51E5 /* Search */,
-				AA19D504272A073E00CFD6D8 /* History */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -304,10 +304,10 @@
 		AA19D510272A4B0000CFD6D8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
+				AABE5AB22730C3690081D877 /* HistoryProgressView.swift */,
 				AA19D4E12729F95900CFD6D8 /* HistoryView.swift */,
 				AAD14349272F3E9E00AE3855 /* SectionView.swift */,
-				AABE5AB22730C3690081D877 /* HistoryProgressView.swift */,
+				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
 			);
 			name = Views;
 			path = ../../App/Views;
