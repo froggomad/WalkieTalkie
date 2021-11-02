@@ -11,6 +11,7 @@ class AudioRecordingViewModel: ObservableObject {
     @Published var incomingRecordings: [AudioRecording] = []
     @Published var outgoingRecordings: [AudioRecording] = []
     @Published var isLoading: Bool = false
+    @Published var apiError: NetworkError? = nil
     let user = User(username: "admin")
     
     var audioService: AudioService
@@ -47,12 +48,17 @@ class AudioRecordingViewModel: ObservableObject {
                             
                             self.outgoingRecordings = recordings.filter { $0.usernameFrom == self.user.username }.sorted(by: { $0.usernameTo < $1.usernameTo })
                         }
+                        self.apiError = nil
                     }
                 } catch {
                     print("Error Decoding Audio Recordings from API:", error.localizedDescription)
+                    self.apiError = .noData
                 }
             case let .failure(error):
                 print("Error fetching Audio Recordings from API", error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.apiError = .badResponse(statusCode: nil)
+                }
             }
         }
     }

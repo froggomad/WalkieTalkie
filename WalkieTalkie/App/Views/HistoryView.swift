@@ -26,12 +26,30 @@ struct HistoryView: View {
                         }
                         // MARK: Empty View
                         if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
-                            Text("Audio Recordings will appear here when you have history to show")
-                                .font(.title)
-                                .padding(.horizontal, 20)
+                            if viewModel.apiError != nil {
+                                VStack {
+                                    Text("There was an error loading your data")
+                                        .font(.title)
+                                        .padding(.horizontal, 20)
+                                        .foregroundColor(ColorSheet.lightText)
+                                        .multilineTextAlignment(.center)
+                                    Button("Try again") {
+                                        viewModel.loadRecordingsFromAPI()
+                                    }
+                                    .frame(width: 100, height: 33)
+                                    .background(ColorSheet.actionColor)
+                                    .cornerRadius(8)
+                                    .padding(.top, 20)
+                                }
                                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                                .foregroundColor(ColorSheet.lightText)
-                                .multilineTextAlignment(.center)
+                            } else {
+                                Text("Audio Recordings will appear here when you have history to show")
+                                    .font(.title)
+                                    .padding(.horizontal, 20)
+                                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                                    .foregroundColor(ColorSheet.lightText)
+                                    .multilineTextAlignment(.center)
+                            }
                         } else {
                             
                             SearchBar(searchText: $searchText, isSearching: $isSearching)
