@@ -1,5 +1,5 @@
 //
-//  PlayButtonStyle.swift
+//  ScaleButtonStyle.swift
 //  WalkieTalkie
 //
 //  Created by Kenneth Dubroff on 11/2/21.
