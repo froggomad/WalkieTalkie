@@ -42,6 +42,7 @@ struct HistoryView: View {
                                         viewModel.loadRecordingsFromAPI()
                                     }
                                 }) {}
+                                .hidden()
                                 
                                 // MARK: - Incoming Recordings -
                                 if !viewModel.incomingRecordings.isEmpty {
