@@ -25,6 +25,7 @@ struct PlayButton: View {
                     .foregroundColor(ColorSheet.actionColor)
             }
             .accessibilityLabel("play button")
+            .buttonStyle(PlayButtonStyle())
         } else {
             Button {
                 audioService.pause()
@@ -35,6 +36,8 @@ struct PlayButton: View {
                     .frame(width: 50, height: 50, alignment: .center)
             }
             .accessibilityLabel("pause button")
+            .buttonStyle(PlayButtonStyle())
+            .foregroundColor(.white)
         }
     }
 }

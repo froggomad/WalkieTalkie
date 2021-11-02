@@ -23,6 +23,7 @@
 		AA19D509272A133A00CFD6D8 /* AudioRecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */; };
 		AA19D50B272A150B00CFD6D8 /* RecordingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */; };
 		AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D51A272A617100CFD6D8 /* AudioService.swift */; };
+		AA7331AF27319AD8000DA5D9 /* PlayButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7331AE27319AD8000DA5D9 /* PlayButtonStyle.swift */; };
 		AABE5AAE273054FC0081D877 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AAD273054FC0081D877 /* RefreshControl.swift */; };
 		AABE5AB127307F620081D877 /* ToFromUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AB027307F620081D877 /* ToFromUser.swift */; };
 		AABE5AB32730C3690081D877 /* HistoryProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AB22730C3690081D877 /* HistoryProgressView.swift */; };
@@ -94,6 +95,7 @@
 		AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingViewModel.swift; sourceTree = "<group>"; };
 		AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRow.swift; sourceTree = "<group>"; };
 		AA19D51A272A617100CFD6D8 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		AA7331AE27319AD8000DA5D9 /* PlayButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButtonStyle.swift; sourceTree = "<group>"; };
 		AABE5AA727304C6E0081D877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AABE5AAD273054FC0081D877 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		AABE5AB027307F620081D877 /* ToFromUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToFromUser.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			children = (
 				AAC0EB2A272E3AA200B28123 /* PlaybackView.swift */,
 				AAC0EB2E272E3CE100B28123 /* PlayButton.swift */,
+				AA7331AE27319AD8000DA5D9 /* PlayButtonStyle.swift */,
 			);
 			path = PlayRecordings;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				AABE5AAE273054FC0081D877 /* RefreshControl.swift in Sources */,
 				AAC0EB2B272E3AA200B28123 /* PlaybackView.swift in Sources */,
 				AAD14348272EF51700AE3855 /* ColorSheet.swift in Sources */,
+				AA7331AF27319AD8000DA5D9 /* PlayButtonStyle.swift in Sources */,
 				AAD1434A272F3E9E00AE3855 /* SectionView.swift in Sources */,
 				AA19D4FF272A036900CFD6D8 /* DataParsable.swift in Sources */,
 				AA19D4FB272A024E00CFD6D8 /* APIConstants.swift in Sources */,
