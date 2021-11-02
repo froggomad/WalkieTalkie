@@ -19,7 +19,6 @@ class AudioRecordingViewModel: ObservableObject {
     init(apiService: APIManageable = APIService(), audioService: AudioService) {
         self.audioService = audioService
         self.apiService = apiService
-        isLoading = true
         loadRecordingsFromAPI()
     }
     
@@ -39,11 +38,12 @@ class AudioRecordingViewModel: ObservableObject {
                 do {
                     let recordings: [AudioRecording] = try DataParser().parse(data: data)
                     DispatchQueue.main.async {
+                        let sortingFrom: (AudioRecording, AudioRecording) -> Bool = { $0.usernameFrom ?? "Anonymous" < $1.usernameFrom ?? "Anonymous" }
                         if self.user.username == "admin" {
-                            self.incomingRecordings = recordings
+                            self.incomingRecordings = recordings.sorted(by: sortingFrom)
                         } else {
-                            self.incomingRecordings = recordings.filter { $0.usernameTo == self.user.username }
-                            self.outgoingRecordings = recordings.filter { $0.usernameFrom == self.user.username }
+                            self.incomingRecordings = recordings.filter { $0.usernameTo == self.user.username }.sorted(by: sortingFrom)
+                            self.outgoingRecordings = recordings.filter { $0.usernameFrom == self.user.username }.sorted(by: { $0.usernameTo < $1.usernameTo })
                         }
                     }
                 } catch {
