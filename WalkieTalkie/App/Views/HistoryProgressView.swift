@@ -12,7 +12,6 @@ struct HistoryProgressView: View {
     
     var body: some View {
         ProgressView("loading...")
-            .padding(.top, 20)
             .foregroundColor(color)
             .progressViewStyle(CircularProgressViewStyle(tint: color))
     }
