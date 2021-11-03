@@ -51,9 +51,9 @@ struct HistoryView: View {
                                     .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                                     .foregroundColor(ColorSheet.lightText)
                                     .multilineTextAlignment(.center)
+                                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                             }
                         } else {
-                            
                             SearchBar(searchText: $searchText, isSearching: $isSearching)
                                 .onAppear(perform: {
                                     viewLoaded = true
@@ -79,7 +79,6 @@ struct HistoryView: View {
                                 if !viewModel.incomingRecordings.isEmpty {
                                     SectionView(recordingType: .incoming, searchText: $searchText, viewModel: viewModel, isSearching: $isSearching)
                                 }
-                                
                                 // MARK: - Outgoing Recordings -
                                 if !viewModel.outgoingRecordings.isEmpty {
                                     SectionView(recordingType: .outgoing, searchText: $searchText, viewModel: viewModel, isSearching: $isSearching)
