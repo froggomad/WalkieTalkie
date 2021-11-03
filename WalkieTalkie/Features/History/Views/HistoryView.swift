@@ -28,7 +28,7 @@ struct HistoryView: View {
                         if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
                             if viewModel.apiError != nil {
                                 VStack {
-                                    Text("There was an error loading your data")
+                                    Text("There was an error loading your transmissions")
                                         .font(.title)
                                         .padding(.horizontal, 20)
                                         .foregroundColor(ColorSheet.lightText)
@@ -45,7 +45,7 @@ struct HistoryView: View {
                                 }
                                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                             } else {
-                                Text("Audio Recordings will appear here when you have history to show")
+                                Text("Audio Transmissions will appear here when you have history to show")
                                     .font(.title)
                                     .padding(.horizontal, 20)
                                     .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
@@ -85,7 +85,7 @@ struct HistoryView: View {
                                     SectionView(recordingType: .outgoing, searchText: $searchText, viewModel: viewModel, isSearching: $isSearching)
                                 }
                             }
-                            .navigationTitle("History")
+                            .navigationTitle("Transmission History")
                             // set section dropdown arrow color
                             .accentColor(ColorSheet.actionColor)
                         }
