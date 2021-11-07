@@ -13,6 +13,16 @@ struct HistoryView: View {
     @State private var isSearching = false
     @State private var viewLoaded = false
     
+    func emptyViewText(using geometry: GeometryProxy) -> some View {
+        Text("Audio Transmissions will appear here when you have history to show")
+            .font(.title)
+            .padding(.horizontal, 20)
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            .foregroundColor(ColorSheet.lightText)
+            .multilineTextAlignment(.center)
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -28,30 +38,29 @@ struct HistoryView: View {
                         if viewModel.incomingRecordings.isEmpty && viewModel.outgoingRecordings.isEmpty {
                             if viewModel.apiError != nil {
                                 VStack {
-                                    Text("There was an error loading your transmissions")
+                                    if !viewModel.isLoading {
+                                        Text("There was an error loading your transmissions")
                                         .font(.title)
                                         .padding(.horizontal, 20)
                                         .foregroundColor(ColorSheet.lightText)
                                         .multilineTextAlignment(.center)
-                                    Button("Try again") {
-                                        viewModel.loadRecordingsFromAPI()
+                                        
+                                        Button("Try again") {
+                                            viewModel.loadRecordingsFromAPI()
+                                        }
+                                        .frame(width: 100, height: 33)
+                                        .background(ColorSheet.actionColor)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(8)
+                                        .padding(.top, 20)
+                                        .buttonStyle(ScaleButtonStyle())
+                                    } else {
+                                        emptyViewText(using: geometry)
                                     }
-                                    .frame(width: 100, height: 33)
-                                    .background(ColorSheet.actionColor)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(8)
-                                    .padding(.top, 20)
-                                    .buttonStyle(ScaleButtonStyle())
                                 }
                                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                             } else {
-                                Text("Audio Transmissions will appear here when you have history to show")
-                                    .font(.title)
-                                    .padding(.horizontal, 20)
-                                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                                    .foregroundColor(ColorSheet.lightText)
-                                    .multilineTextAlignment(.center)
-                                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                                emptyViewText(using: geometry)
                             }
                         } else {
                             SearchBar(searchText: $searchText, isSearching: $isSearching)
