@@ -39,7 +39,7 @@ class AudioRecordingViewModel: ObservableObject {
                 do {
                     let recordings: [AudioRecording] = try DataParser().parse(data: data)
                     DispatchQueue.main.async {
-                        let sortingFrom: (AudioRecording, AudioRecording) -> Bool = { $0.usernameFrom ?? "Anonymous" < $1.usernameFrom ?? "Anonymous" }
+                        let sortingFrom: (AudioRecording, AudioRecording) -> Bool = { $0.unwrappedUsernameFrom < $1.unwrappedUsernameFrom }
                         
                         if self.user.username == "admin" {
                             self.incomingRecordings = recordings.sorted(by: sortingFrom)

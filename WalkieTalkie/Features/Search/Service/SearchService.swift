@@ -17,7 +17,7 @@ class SearchService {
         switch recordingType {
         case .incoming:
             return searchArray.filter {
-                let usernameFrom = $0.usernameFrom ?? ""
+                let usernameFrom = $0.unwrappedUsernameFrom
                 return usernameFrom.lowercased().contains(searchText.wrappedValue.lowercased())
             }
         case .outgoing:

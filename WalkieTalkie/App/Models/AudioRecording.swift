@@ -14,6 +14,10 @@ struct AudioRecording: Codable, Identifiable, Equatable {
     var timestamp: Date
     let recording: String
     
+    var unwrappedUsernameFrom: String {
+        usernameFrom ?? "Anonymous"
+    }
+    
     var url: URL {
         return URL(string: "http://\(APIConstants.host):\(APIConstants.port)\(recording)")!
     }

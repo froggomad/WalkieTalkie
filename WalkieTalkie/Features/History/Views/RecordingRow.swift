@@ -29,7 +29,7 @@ struct RecordingRow: View, ToFromUser {
                 Text("\(toFromLabel)\(toFromUsername)")
                     .font(.body)
                     .fontWeight(.semibold)
-                    .accessibilityLabel("from user \(recording.usernameFrom ?? "Anonymous")")
+                    .accessibilityLabel("from user \(recording.unwrappedUsernameFrom)")
             }
         }
         

@@ -16,6 +16,6 @@ extension ToFromUser {
         return recordingType == .outgoing ? "To: " : "From: "
     }
     var toFromUsername: String {
-        return recordingType == .outgoing ? recording.usernameTo : recording.usernameFrom ?? "Anonymous"
+        return recordingType == .outgoing ? recording.usernameTo : recording.unwrappedUsernameFrom
     }
 }
