@@ -11,7 +11,6 @@ import XCTest
 class SearchTests: XCTestCase {
     
     func testMatchingIncomingSearchReturnsResults() {
-        let sut = sut
         let service = sut.service
         let recordings = sut.recordings
         
@@ -21,7 +20,6 @@ class SearchTests: XCTestCase {
     }
     
     func testMatchingOutgoingSearchReturnsResults() {
-        let sut = sut
         let service = sut.service
         let recordings = sut.recordings
         
@@ -31,7 +29,6 @@ class SearchTests: XCTestCase {
     }
     
     func testMismatchedSearchReturnsEmptyResults() {
-        let sut = sut
         let service = sut.service
         let recordings = sut.recordings
         
