@@ -20,28 +20,15 @@ struct SectionView: View {
     
     var body: some View {
         Section(header: Text(recordingText)) {
+            let recordingsToUse = recordingType == .outgoing ? viewModel.outgoingRecordings : viewModel.incomingRecordings
             
-            if recordingType == .incoming {
-                let filteredIncomingRecordings = searchService.search(for: $searchText, in: viewModel.incomingRecordings, recordingType: recordingType)
-                
-                let filteredRecordings = filteredIncomingRecordings.isEmpty ? viewModel.incomingRecordings : filteredIncomingRecordings
-                
-                ForEach(filteredRecordings) { recording in
-                    NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService, recordingType: recordingType)) {
-                        RecordingRow(audioService: viewModel.audioService, recording: recording, recordingType: recordingType)
-                    }
-                }
-            } else {
-                let filteredOutgoingRecordings =
-                searchService.search(for: $searchText, in: viewModel.outgoingRecordings, recordingType: recordingType)
-                
-                let filteredRecordings = filteredOutgoingRecordings.isEmpty ?
-                viewModel.outgoingRecordings : filteredOutgoingRecordings
-                
-                ForEach(filteredRecordings) { recording in
-                    NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService, recordingType: recordingType)) {
-                        RecordingRow(audioService: viewModel.audioService, recording: recording, recordingType: recordingType)
-                    }
+            let filteredIncomingRecordings = searchService.search(for: $searchText, in: recordingsToUse, recordingType: recordingType)
+            
+            let filteredRecordings = filteredIncomingRecordings.isEmpty ? viewModel.incomingRecordings : filteredIncomingRecordings
+            
+            ForEach(filteredRecordings) { recording in
+                NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService, recordingType: recordingType)) {
+                    RecordingRow(audioService: viewModel.audioService, recording: recording, recordingType: recordingType)
                 }
             }
         }
