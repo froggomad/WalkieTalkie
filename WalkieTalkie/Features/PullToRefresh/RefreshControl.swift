@@ -14,7 +14,7 @@ struct RefreshControl: View {
             if (geo.frame(in: coordinateSpace).midY > 250) {
                 Spacer()
                     .onAppear {
-                        onRefresh() //call refresh once if pulled more than 50px0
+                        onRefresh() //call refresh once
                     }
             }
         }
