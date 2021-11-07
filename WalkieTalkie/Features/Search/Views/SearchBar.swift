@@ -28,6 +28,7 @@ struct SearchBar: View {
             
             if isSearching {
                 Button("cancel") {
+                    searchText = ""
                     isSearching = false
                     // changing the ID dismisses the keyboard
                     textFieldId = UUID().uuidString
