@@ -20,7 +20,6 @@ struct HistoryView: View {
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             .foregroundColor(ColorSheet.lightText)
             .multilineTextAlignment(.center)
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
     }
     
     var body: some View {
