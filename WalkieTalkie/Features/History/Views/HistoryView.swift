@@ -11,7 +11,7 @@ struct HistoryView: View {
     @ObservedObject var viewModel: AudioRecordingViewModel = .init(audioService: AudioService())
     @State private var searchText = ""
     @State private var isSearching = false
-    @State private var viewLoaded = false
+    @State private var listLoaded = false
     
     func emptyViewText(using geometry: GeometryProxy) -> some View {
         Text("Audio Transmissions will appear here when you have history to show")
@@ -31,7 +31,7 @@ struct HistoryView: View {
                 GeometryReader { geometry in
                     VStack {
                         // MARK: Loading View
-                        if viewModel.isLoading && !viewLoaded {
+                        if viewModel.isLoading && !listLoaded {
                             HistoryProgressView()
                         }
                         // MARK: Empty View
@@ -64,10 +64,6 @@ struct HistoryView: View {
                             }
                         } else {
                             SearchBar(searchText: $searchText, isSearching: $isSearching)
-                                .onAppear(perform: {
-                                    viewLoaded = true
-                                })
-                            
                             List {
                                 // refresh control
                                 Section(header: RefreshControl(coordinateSpace: .named("refresh_history")) {
@@ -96,6 +92,9 @@ struct HistoryView: View {
                             .navigationTitle("Transmission History")
                             // set section dropdown arrow color
                             .accentColor(ColorSheet.actionColor)
+                            .onAppear(perform: {
+                                listLoaded = true
+                            })
                         }
                         
                     }
