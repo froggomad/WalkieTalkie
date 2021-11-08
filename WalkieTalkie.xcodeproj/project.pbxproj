@@ -313,7 +313,6 @@
 				AA19D4E12729F95900CFD6D8 /* HistoryView.swift */,
 				AAD14349272F3E9E00AE3855 /* SectionView.swift */,
 				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
-				AAEB5D5927398D77009D951B /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +328,7 @@
 		AA7331B02731C6E8000DA5D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AAEB5D5927398D77009D951B /* LoadingView.swift */,
 				AA7331B12731C6ED000DA5D9 /* Styles */,
 			);
 			path = Views;
