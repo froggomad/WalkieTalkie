@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct HistoryProgressView: View {
-    var color: Color = ColorSheet.lightText
+    var color: Color = ColorSheet.primaryColor
+    var text: String = "loading your history..."
     
     var body: some View {
-        ProgressView("loading...")
-            .foregroundColor(color)
-            .progressViewStyle(CircularProgressViewStyle(tint: color))
+        ZStack {
+            color
+            VStack {
+                LoadingAnimationView(color: color)
+                    .frame(width: 125, height: 125, alignment: .center)
+                Text(text)
+            }
+        }
     }
 }
 
 struct HistoryProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            Color.black
-            HistoryProgressView()
-        }
-        HistoryProgressView(color: .black)
+        HistoryProgressView()
     }
 }
