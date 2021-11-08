@@ -44,6 +44,7 @@
 		AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD30982272CAADA000D51E5 /* ClearButtonViewModifier.swift */; };
 		AAD3098B272D10AC000D51E5 /* RequestableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3098A272D10AC000D51E5 /* RequestableTests.swift */; };
 		AAD9EC41272C4F2E0099A562 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9EC40272C4F2E0099A562 /* User.swift */; };
+		AAEB5D5A27398D77009D951B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB5D5927398D77009D951B /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		AAD30988272D10AC000D51E5 /* NetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD3098A272D10AC000D51E5 /* RequestableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestableTests.swift; sourceTree = "<group>"; };
 		AAD9EC40272C4F2E0099A562 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AAEB5D5927398D77009D951B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 				AA19D4E12729F95900CFD6D8 /* HistoryView.swift */,
 				AAD14349272F3E9E00AE3855 /* SectionView.swift */,
 				AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */,
+				AAEB5D5927398D77009D951B /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				AAC0EB2F272E3CE100B28123 /* PlayButton.swift in Sources */,
 				AA19D503272A04FE00CFD6D8 /* AudioRecording.swift in Sources */,
 				AAD14346272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift in Sources */,
+				AAEB5D5A27398D77009D951B /* LoadingView.swift in Sources */,
 				AABE5AB32730C3690081D877 /* HistoryProgressView.swift in Sources */,
 				AA19D4F22729FA5E00CFD6D8 /* Requestable.swift in Sources */,
 				AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */,
