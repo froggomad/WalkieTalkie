@@ -75,7 +75,7 @@ struct HistoryView: View {
                                 if viewModel.isLoading {
                                     HStack {
                                         Spacer()
-                                        HistoryProgressView(color: .black)
+                                        HistoryProgressView(color: ColorSheet.lightText, text: "reloading your history...")
                                         Spacer()
                                     }
                                 }
