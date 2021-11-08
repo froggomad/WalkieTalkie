@@ -20,7 +20,7 @@ struct LoadingAnimation: UIViewRepresentable {
             guard let image = UIImage(named: "walkie_talking_\(String(format: "%03d", i))") else { continue }
             images.append(image)
         }
-        animatedFrames = UIImage.animatedImage(with: images, duration: 4) ?? UIImage()
+        animatedFrames = UIImage.animatedImage(with: images, duration: 1) ?? UIImage()
         image = UIImageView(frame: CGRect(x: 0, y: 0, width: 125, height: 125))
     }
 
