@@ -12,19 +12,21 @@ struct HistoryProgressView: View {
     var text: String = "loading your history..."
     
     var body: some View {
-        ZStack {
-            color
-            VStack {
-                LoadingAnimationView(color: color)
-                    .frame(width: 125, height: 125, alignment: .center)
-                Text(text)
-            }
+        VStack {
+            LoadingAnimationView(color: color)
+                .frame(width: 125, height: 125, alignment: .center)
+            Text(text)
         }
+
     }
 }
 
 struct HistoryProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryProgressView()
+        ZStack {
+            ColorSheet.primaryColor
+                .ignoresSafeArea()
+            HistoryProgressView()
+        }
     }
 }
