@@ -23,8 +23,8 @@ class LocalPersistenceController {
         return isFilePersisted(at: path)
     }
 
-    func load(from path: String) {
-
+    func load(from path: String) -> Data? {
+        return nil
     }
 
     func delete(at path: String) -> Bool {
