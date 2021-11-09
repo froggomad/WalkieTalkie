@@ -12,7 +12,7 @@ class LocalPersistenceTests: XCTestCase {
 
     func testSavedFile_isFound() {
         let path = "example-file"
-        let result = sut.save(data: "test".data(using: .utf8)!, to: path)
+        let result = sut.save(data: testData, to: path)
         XCTAssertTrue(result)
     }
 
@@ -23,6 +23,10 @@ class LocalPersistenceTests: XCTestCase {
 
     private var sut: LocalPersistenceController {
         .init()
+    }
+
+    private var testData: Data {
+        "test".data(using: .utf8)!
     }
 
 }
