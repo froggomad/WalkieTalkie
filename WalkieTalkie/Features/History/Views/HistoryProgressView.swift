@@ -17,7 +17,6 @@ struct HistoryProgressView: View {
                 .frame(width: 125, height: 125, alignment: .center)
             Text(text)
         }
-
     }
 }
 
