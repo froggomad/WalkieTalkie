@@ -21,6 +21,14 @@ class LocalPersistenceTests: XCTestCase {
         XCTAssertFalse(sut.isFilePersisted(at: path))
     }
 
+    func testDeletedValidFile_returnsTrue() {
+        let path = "delete-file"
+        let saved = sut.save(data: testData, to: path)
+        XCTAssertTrue(saved)
+        let deleted = sut.delete(at: path)
+        XCTAssertTrue(deleted)
+    }
+
     private var sut: LocalPersistenceController {
         .init()
     }
