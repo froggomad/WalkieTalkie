@@ -9,7 +9,7 @@ import Foundation
 
 class LocalPersistenceController {
     func isFilePersisted(url: URL) -> Bool {
-        return false
+        return true
     }
 
     func save(url: URL) {
