@@ -52,12 +52,14 @@ class AudioRecordingViewModel: ObservableObject {
                     }
                 } catch {
                     print("Error Decoding Audio Recordings from API:", error.localizedDescription)
-                    self.apiError = .badDecode(error)
+                    DispatchQueue.main.async {
+                        self.apiError = .badDecode(error)
+                    }
                 }
             case let .failure(error):
                 print("Error fetching Audio Recordings from API", error.localizedDescription)
                 DispatchQueue.main.async {
-                    self.apiError = .badResponse(statusCode: nil)
+                    self.apiError = error
                 }
             }
         }
