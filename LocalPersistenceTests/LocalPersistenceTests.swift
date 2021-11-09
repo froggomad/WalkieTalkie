@@ -37,9 +37,8 @@ class LocalPersistenceTests: XCTestCase {
 
     func testValidFile_isRetrieved() {
         let path = "saved-file"
-        let data = "saved-data".data(using: .utf8)!
 
-        let result = sut.save(data: data, to: path)
+        let result = sut.save(data: testData, to: path)
         XCTAssertTrue(result)
 
         let returnedData = sut.load(from: path)
