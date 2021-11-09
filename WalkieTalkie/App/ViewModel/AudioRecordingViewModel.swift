@@ -12,7 +12,7 @@ class AudioRecordingViewModel: ObservableObject {
     @Published var outgoingRecordings: [AudioRecording] = []
     @Published var isLoading: Bool = false
     @Published var apiError: NetworkError? = nil
-    let user = User(username: "admin")
+    let user = User(username: "Joe Satriani", userType: .admin)
     
     var audioService: AudioService
     let apiService: APIManageable
@@ -41,7 +41,7 @@ class AudioRecordingViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         let sortingFrom: (AudioRecording, AudioRecording) -> Bool = { $0.unwrappedUsernameFrom < $1.unwrappedUsernameFrom }
                         
-                        if self.user.username == "admin" {
+                        if self.user.userType == .admin {
                             self.incomingRecordings = recordings.sorted(by: sortingFrom)
                         } else {
                             self.incomingRecordings = recordings.filter { $0.usernameTo == self.user.username }.sorted(by: sortingFrom)
