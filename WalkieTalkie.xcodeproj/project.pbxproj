@@ -23,6 +23,7 @@
 		AA19D509272A133A00CFD6D8 /* AudioRecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */; };
 		AA19D50B272A150B00CFD6D8 /* RecordingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */; };
 		AA19D51B272A617100CFD6D8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19D51A272A617100CFD6D8 /* AudioService.swift */; };
+		AA3527B8273A067D008F0B43 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3527B7273A067D008F0B43 /* UserType.swift */; };
 		AA7331B32731C83B000DA5D9 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7331B22731C83B000DA5D9 /* ScaleButtonStyle.swift */; };
 		AABE5AAE273054FC0081D877 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AAD273054FC0081D877 /* RefreshControl.swift */; };
 		AABE5AB127307F620081D877 /* ToFromUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE5AB027307F620081D877 /* ToFromUser.swift */; };
@@ -96,6 +97,7 @@
 		AA19D508272A133A00CFD6D8 /* AudioRecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingViewModel.swift; sourceTree = "<group>"; };
 		AA19D50A272A150B00CFD6D8 /* RecordingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRow.swift; sourceTree = "<group>"; };
 		AA19D51A272A617100CFD6D8 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		AA3527B7273A067D008F0B43 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		AA7331B22731C83B000DA5D9 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
 		AABE5AA727304C6E0081D877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AABE5AAD273054FC0081D877 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
@@ -218,10 +220,9 @@
 		AA19D4EE2729F9F200CFD6D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA3527B9273A0681008F0B43 /* User */,
 				AA19D502272A04FE00CFD6D8 /* AudioRecording.swift */,
-				AAD9EC40272C4F2E0099A562 /* User.swift */,
 				AAD14347272EF51700AE3855 /* ColorSheet.swift */,
-				AAD14345272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,9 +326,19 @@
 			path = AudioService;
 			sourceTree = "<group>";
 		};
+		AA3527B9273A0681008F0B43 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AAD9EC40272C4F2E0099A562 /* User.swift */,
+				AA3527B7273A067D008F0B43 /* UserType.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		AA7331B02731C6E8000DA5D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AAD14345272EF4BC00AE3855 /* View+navigationBarTitleTextColor.swift */,
 				AAEB5D5927398D77009D951B /* LoadingView.swift */,
 				AA7331B12731C6ED000DA5D9 /* Styles */,
 			);
@@ -639,6 +650,7 @@
 				AAD30983272CAADA000D51E5 /* ClearButtonViewModifier.swift in Sources */,
 				AABE5AAE273054FC0081D877 /* RefreshControl.swift in Sources */,
 				AAC0EB2B272E3AA200B28123 /* PlaybackView.swift in Sources */,
+				AA3527B8273A067D008F0B43 /* UserType.swift in Sources */,
 				AAD14348272EF51700AE3855 /* ColorSheet.swift in Sources */,
 				AAD1434A272F3E9E00AE3855 /* SectionView.swift in Sources */,
 				AA19D4FF272A036900CFD6D8 /* DataParsable.swift in Sources */,

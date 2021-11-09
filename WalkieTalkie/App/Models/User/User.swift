@@ -7,4 +7,5 @@
 
 struct User {
     let username: String
+    let userType: UserType
 }
