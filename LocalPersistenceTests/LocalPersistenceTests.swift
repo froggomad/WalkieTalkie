@@ -43,7 +43,13 @@ class LocalPersistenceTests: XCTestCase {
         XCTAssertTrue(result)
 
         let returnedData = sut.load(from: path)
-        XCTAssertEqual(data, returnedData)
+        XCTAssertEqual(testData, returnedData)
+    }
+
+    func testInvalidFile_isNotRetrieved() {
+        let path = "invalid-file-path"
+        let result = sut.load(from: path)
+        XCTAssertNil(result)
     }
 
     private var sut: LocalPersistenceController {
