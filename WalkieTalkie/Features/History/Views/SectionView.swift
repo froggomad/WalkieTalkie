@@ -22,9 +22,9 @@ struct SectionView: View {
         Section(header: Text(recordingText)) {
             let recordingsToUse = recordingType == .outgoing ? viewModel.outgoingRecordings : viewModel.incomingRecordings
             
-            let filteredIncomingRecordings = searchService.search(for: $searchText, in: recordingsToUse, recordingType: recordingType)
+            let filteredRecordings = searchService.search(for: $searchText, in: recordingsToUse, recordingType: recordingType)
             
-            let filteredRecordings = filteredIncomingRecordings.isEmpty ? recordingsToUse : filteredIncomingRecordings
+            let filteredRecordings = filteredRecordings.isEmpty ? recordingsToUse : filteredRecordings
             
             ForEach(filteredRecordings) { recording in
                 NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService, recordingType: recordingType)) {
