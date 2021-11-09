@@ -12,8 +12,8 @@ class LocalPersistenceTests: XCTestCase {
 
     func testSavedFile_isFound() {
         let path = "example-file"
-        sut.save(data: "test".data(using: .utf8)!, to: path)
-        XCTAssertTrue(sut.isFilePersisted(at: path))
+        let result = sut.save(data: "test".data(using: .utf8)!, to: path)
+        XCTAssertTrue(result)
     }
 
     func testUnsavedFile_isNotFound() {

@@ -14,7 +14,7 @@ class LocalPersistenceController {
         return FileManager.default.fileExists(atPath: filePath.path)
     }
 
-    func save(data: Data, to path: String) {
+    func save(data: Data, to path: String) -> Bool {
         do {
             let path = FileManager.default.urls(for: .documentDirectory,
                                                    in: .userDomainMask)[0].appendingPathComponent(path)
@@ -22,13 +22,15 @@ class LocalPersistenceController {
         } catch {
             print("error saving file to \(path): \(error)")
         }
+        return isFilePersisted(at: path)
     }
 
-    func load(url: URL) {
+    func load(from path: String) {
 
     }
 
-    func delete(url: URL) {
-
+    func delete(at path: String) -> Bool {
+        try? FileManager.default.removeItem(atPath: path)
+        return isFilePersisted(at: path)
     }
 }
