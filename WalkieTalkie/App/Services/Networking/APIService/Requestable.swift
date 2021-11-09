@@ -10,6 +10,7 @@ import Foundation
 enum NetworkError: Error, Equatable {
     case invalidURL
     case badRequest
+    case badDecode(Error)
     case badResponse(statusCode: Int?)
     case noData
     case error(Error)
