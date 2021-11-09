@@ -13,7 +13,7 @@ struct HistoryView: View {
     @State private var isSearching = false
     @State private var listLoaded = false
     
-    func emptyViewText(using geometry: GeometryProxy) -> some View {
+    private func emptyViewText(using geometry: GeometryProxy) -> some View {
         Text("Audio Transmissions will appear here when you have history to show")
             .font(.title)
             .padding(.horizontal, 20)
