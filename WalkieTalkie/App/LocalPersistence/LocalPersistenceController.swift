@@ -9,15 +9,13 @@ import Foundation
 
 class LocalPersistenceController {
     func isFilePersisted(at path: String) -> Bool {
-        let filePath = FileManager.default.urls(for: .documentDirectory,
-                                               in: .userDomainMask)[0].appendingPathComponent(path)
+        let filePath = userDocumentPath(path)
         return FileManager.default.fileExists(atPath: filePath.path)
     }
 
     func save(data: Data, to path: String) -> Bool {
         do {
-            let path = FileManager.default.urls(for: .documentDirectory,
-                                                   in: .userDomainMask)[0].appendingPathComponent(path)
+            let path = userDocumentPath(path)
             try data.write(to: path)
         } catch {
             print("error saving file to \(path): \(error)")
@@ -32,5 +30,10 @@ class LocalPersistenceController {
     func delete(at path: String) -> Bool {
         try? FileManager.default.removeItem(atPath: path)
         return isFilePersisted(at: path)
+    }
+
+    private func userDocumentPath(_ path: String) -> URL {
+        FileManager.default.urls(for: .documentDirectory,
+                                               in: .userDomainMask)[0].appendingPathComponent(path)
     }
 }
