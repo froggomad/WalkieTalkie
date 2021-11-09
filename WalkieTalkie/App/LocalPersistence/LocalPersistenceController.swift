@@ -8,12 +8,20 @@
 import Foundation
 
 class LocalPersistenceController {
-    func isFilePersisted(url: URL) -> Bool {
-        return true
+    func isFilePersisted(at path: String) -> Bool {
+        let filePath = FileManager.default.urls(for: .documentDirectory,
+                                               in: .userDomainMask)[0].appendingPathComponent(path)
+        return FileManager.default.fileExists(atPath: filePath.path)
     }
 
-    func save(url: URL) {
-
+    func save(data: Data, to path: String) {
+        do {
+            let path = FileManager.default.urls(for: .documentDirectory,
+                                                   in: .userDomainMask)[0].appendingPathComponent(path)
+            try data.write(to: path)
+        } catch {
+            print("error saving file to \(path): \(error)")
+        }
     }
 
     func load(url: URL) {
