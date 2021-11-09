@@ -24,7 +24,8 @@ class LocalPersistenceController {
     }
 
     func load(from path: String) -> Data? {
-        return nil
+        let filepath = userDocumentPath(path)
+        return try? Data(contentsOf: filepath)
     }
 
     func delete(at path: String) -> Bool {
