@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct SaveButton: View {
-    @State var persistenceService: AudioRecordingPersistenceService
+    var persistenceService: AudioRecordingPersistenceService
     @State var isRecordingSaved: Bool = false
 
     var recording: AudioRecording
