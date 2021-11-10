@@ -11,6 +11,11 @@ import SwiftUI
 
 class AudioService {
     @Published var isPaused: Bool = false
+    var persistenceService: AudioRecordingPersistenceService
+
+    init(persistenceService: AudioRecordingPersistenceService) {
+        self.persistenceService = persistenceService
+    }
     
     var url: URL? {
         didSet {
