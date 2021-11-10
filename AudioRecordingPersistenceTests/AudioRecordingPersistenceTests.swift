@@ -31,14 +31,22 @@ class AudioRecordingPersistenceTests: XCTestCase {
     }
 
     func testLoadSavedRecording_returnsURL() {
-        let url = sut.load(AudioRecording.previewRecording, of: .outgoing)
-        XCTAssertNotNil(url)
-        var components = url!.absoluteString.components(separatedBy: "/")
-        components.removeLast() // remove empty position
+        let recording = AudioRecording.previewRecording
+        let recordingType: RecordingType = .outgoing
+        let expectation = self.expectation(description: "wait for saving recording in testLoadSavedRecording_returnsURL")
+        sut.save(recording, of: recordingType) { [weak self] _ in
+            expectation.fulfill()
+            guard let self = self else { return }
+            let url = self.sut.load(recording, of: recordingType)
+            XCTAssertNotNil(url)
+            var components = url!.absoluteString.components(separatedBy: "/")
+            components.removeLast() // remove empty position
 
-        let previewRecordingURLFilename = AudioRecording.previewRecording.url.absoluteString
-        let previewRecordingComponents = previewRecordingURLFilename.components(separatedBy: "/")
+            let previewRecordingURLFilename = AudioRecording.previewRecording.url.absoluteString
+            let previewRecordingComponents = previewRecordingURLFilename.components(separatedBy: "/")
 
-        XCTAssertEqual(components.last, previewRecordingComponents.last)
+            XCTAssertEqual(components.last, previewRecordingComponents.last)
+        }
+        wait(for: [expectation], timeout: 10.0)
     }
 }
