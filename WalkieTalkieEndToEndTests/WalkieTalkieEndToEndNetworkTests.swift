@@ -13,7 +13,7 @@ class WalkieTalkieEndToEndNetworkTests: XCTestCase {
     func testHistoryURL_completesData() {
         let request = GetRecordingRequest()
         let expectation = expectation(description: "testhistoryURL expectation")
-        sut.processRequest(with: request) { result in
+        sut.processRequestable(with: request) { result in
             expectation.fulfill()
             switch result {
             case let .success(data):
@@ -28,7 +28,7 @@ class WalkieTalkieEndToEndNetworkTests: XCTestCase {
     func testInvalidURL_completesError() {
         let request = InvalidRequestSpy()
         let expectation = expectation(description: "testinvalidURL expectation")
-        sut.processRequest(with: request) { result in
+        sut.processRequestable(with: request) { result in
             expectation.fulfill()
             switch result {
             case .success:

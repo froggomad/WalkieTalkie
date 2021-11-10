@@ -25,7 +25,7 @@ class AudioRecordingViewModel: ObservableObject {
     
     func loadRecordingsFromAPI(completion: @escaping () -> Void = {}) {
         isLoading = true
-        apiService.processRequest(with: GetRecordingRequest()) { [weak self] result in
+        apiService.processRequestable(with: GetRecordingRequest()) { [weak self] result in
             defer {
                 DispatchQueue.main.async {
                     self?.isLoading = false

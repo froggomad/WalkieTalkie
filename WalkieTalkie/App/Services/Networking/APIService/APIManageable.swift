@@ -8,5 +8,5 @@
 import Foundation
 
 protocol APIManageable {
-    func processRequest(with data: Requestable, completion: @escaping (Result<Data, NetworkError>) -> ())
+    func processRequestable(with data: Requestable, completion: @escaping (Result<Data, NetworkError>) -> ())
 }
