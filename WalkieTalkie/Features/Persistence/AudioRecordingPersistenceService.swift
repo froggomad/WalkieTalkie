@@ -20,31 +20,20 @@ class AudioRecordingPersistenceService {
     func save(_ recording: AudioRecording, of type: RecordingType, completion: @escaping (Result<Bool, Error>) -> Void) {
         let url = recording.url
         let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
-
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-
-            guard let data = data else {
-                completion(.failure(NetworkError.noData))
-                return
-            }
-
-            guard let self = self else {
-                completion(.failure(NSError(domain: #function, code: 400, userInfo: nil)))
-                return
-            }
-            
-            completion(
-                .success(
-                    self.persistenceController.save(data: data,
-                                                    filePath: self.filePath(using: recording, of: type),
-                                                    directoryPath: self.directoryPath(using: recording, of: type))
+        apiService.processURLRequest(request) { result in
+            switch result {
+            case let .success(data):
+                completion(
+                    .success(
+                        self.persistenceController.save(data: data,
+                                                        filePath: self.filePath(using: recording, of: type),
+                                                        directoryPath: self.directoryPath(using: recording, of: type))
+                    )
                 )
-            )
-        }.resume()
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
     }
 
     func load(_ recording: AudioRecording, of type: RecordingType) -> URL {
