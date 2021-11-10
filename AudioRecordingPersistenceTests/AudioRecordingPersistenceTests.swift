@@ -9,6 +9,7 @@ import XCTest
 @testable import WalkieTalkie
 
 class AudioRecordingPersistenceTests: XCTestCase {
+    private var sut: AudioRecordingPersistenceService = .init(user: User(username: "admin", userType: .admin))
 
     func testSaveRecordingToDisk_returnsTrue() {
         let expectation = self.expectation(description: "test saving recording")
@@ -23,9 +24,4 @@ class AudioRecordingPersistenceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-
-    private var sut: (AudioRecordingPersistenceService) {
-        .init(user: User(username: "admin", userType: .admin))
-    }
-
 }
