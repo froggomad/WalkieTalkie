@@ -43,7 +43,7 @@ struct AudioRecording: Codable, Identifiable, Equatable {
 }
 
 extension AudioRecording {
-    static let previewRecording = AudioRecording(id: 0, usernameFrom: "Someone Else", usernameTo: "You", timestamp: Date(), recording: "example_transmission.mp3")
+    static let previewRecording = AudioRecording(id: 0, usernameFrom: "Someone Else", usernameTo: "You", timestamp: Date(), recording: "/recordings/example_transmission.mp3")
     static let mockData =
     """
     [{"id":1,"username_from":"farbrother0","timestamp":"1606314693","recording":"/recordings/example_transmission.mp3","username_to":"kyle_ski"},

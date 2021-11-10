@@ -22,7 +22,6 @@ class AudioRecordingPersistenceTests: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 10.0)
-        print(NSHomeDirectory())
     }
 
     private var sut: (AudioRecordingPersistenceService) {
