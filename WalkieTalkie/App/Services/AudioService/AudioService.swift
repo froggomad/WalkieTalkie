@@ -17,7 +17,7 @@ class AudioService {
         self.persistenceService = persistenceService
     }
     
-    var url: URL? {
+    private var url: URL? {
         didSet {
             guard let url = url else { return }
             player = AVPlayer(url: url)
@@ -29,6 +29,14 @@ class AudioService {
     func play() {
         player?.volume = 1.0
         player?.play()
+    }
+
+    func setRecording(_ recording: AudioRecording, of type: RecordingType) {
+        if persistenceService.isRecordingSaved(recording, of: type) {
+            url = persistenceService.load(recording, of: type)
+        } else {
+            url = recording.url
+        }
     }
     
     func pause() {
