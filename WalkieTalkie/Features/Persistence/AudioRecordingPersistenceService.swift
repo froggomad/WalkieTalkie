@@ -62,4 +62,8 @@ class AudioRecordingPersistenceService {
         let storedUser = type == .outgoing ? recording.usernameTo : recording.unwrappedUsernameFrom
         return "recordings/\(user.username)/\(type)/\(storedUser)"
     }
+
+    func isRecordingSaved(_ recording: AudioRecording, of type: RecordingType) -> Bool {
+        return persistenceController.isFilePersisted(at: directoryPath(using: recording, of: type))
+    }
 }
