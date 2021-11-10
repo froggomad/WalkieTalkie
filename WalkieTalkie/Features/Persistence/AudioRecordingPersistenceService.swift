@@ -20,7 +20,8 @@ class AudioRecordingPersistenceService {
     func save(_ recording: AudioRecording, of type: RecordingType, completion: @escaping (Result<Bool, Error>) -> Void) {
         let url = recording.url
         let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
+
             if let error = error {
                 completion(.failure(error))
                 return
@@ -31,24 +32,34 @@ class AudioRecordingPersistenceService {
                 return
             }
 
+            guard let self = self else {
+                completion(.failure(NSError(domain: #function, code: 400, userInfo: nil)))
+                return
+            }
+            
             completion(
                 .success(
                     self.persistenceController.save(data: data,
-                                                    to: self.path(using: recording, of: type))
+                                                    filePath: self.filePath(using: recording, of: type),
+                                                    directoryPath: self.directoryPath(using: recording, of: type))
                 )
             )
         }.resume()
     }
 
     func load(_ recording: AudioRecording, of type: RecordingType) -> URL {
-        return persistenceController.userDocumentPath(path(using: recording, of: type))
+        return persistenceController.userDocumentPath(filePath(using: recording, of: type))
     }
 
-    private func path(using recording: AudioRecording, of type: RecordingType) -> String {
-        let storedUser = type == .outgoing ? recording.usernameTo : recording.unwrappedUsernameFrom
+    private func filePath(using recording: AudioRecording, of type: RecordingType) -> String {
         // check for directory in filename
         let filename = recording.recording.components(separatedBy: "/")
         let recordingFilename: String = filename.count > 1 ? filename.last! : recording.recording
-        return "recordings/\(user.username)/\(type)/\(storedUser)\(recordingFilename)"
+        return directoryPath(using: recording, of: type) + "/" + recordingFilename
+    }
+
+    private func directoryPath(using recording: AudioRecording, of type: RecordingType) -> String {
+        let storedUser = type == .outgoing ? recording.usernameTo : recording.unwrappedUsernameFrom
+        return "recordings/\(user.username)/\(type)/\(storedUser)"
     }
 }
