@@ -12,7 +12,7 @@ class LocalPersistenceTests: XCTestCase {
 
     func testSavedFile_isFound() {
         let path = "example-file"
-        let result = sut.save(data: testData, to: path)
+        let result = sut.save(data: testData, filePath: path)
         XCTAssertTrue(result)
     }
 
@@ -23,7 +23,7 @@ class LocalPersistenceTests: XCTestCase {
 
     func testDeletedValidFile_returnsTrue() {
         let path = "delete-file"
-        let saved = sut.save(data: testData, to: path)
+        let saved = sut.save(data: testData, filePath: path)
         XCTAssertTrue(saved)
         let deleted = sut.delete(at: path)
         XCTAssertTrue(deleted)
@@ -38,7 +38,7 @@ class LocalPersistenceTests: XCTestCase {
     func testValidFile_isRetrieved() {
         let path = "saved-file"
 
-        let result = sut.save(data: testData, to: path)
+        let result = sut.save(data: testData, filePath: path)
         XCTAssertTrue(result)
 
         let returnedData = sut.load(from: path)

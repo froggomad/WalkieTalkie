@@ -13,11 +13,13 @@ class LocalPersistenceController {
         return FileManager.default.fileExists(atPath: filePath.path)
     }
 
-    func save(data: Data, to path: String) -> Bool {
+    func save(data: Data, filePath path: String, directoryPath: String? = nil) -> Bool {
         do {
-            let filePath = userDocumentPath(path)
-            createDirectory(at: filePath)
+            if let directoryPath = directoryPath {
+                createDirectory(at: userDocumentPath(directoryPath))
+            }
 
+            let filePath = userDocumentPath(path)
             try data.write(to: filePath)
         } catch {
             print("error saving file to \(path): \(error)")
