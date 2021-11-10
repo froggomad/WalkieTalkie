@@ -10,12 +10,13 @@ import SwiftUI
 struct PlayButton: View {
     @State var audioService: AudioService
     @State var recording: AudioRecording
+    var recordingType: RecordingType
     @State var isPlaying: Bool = false
     
     var body: some View {
         if !isPlaying {
             Button {
-                audioService.url = recording.url
+                audioService.setRecording(recording, of: recordingType)
                 audioService.play()
                 isPlaying = true
             } label: {
@@ -44,6 +45,6 @@ struct PlayButton: View {
 
 struct PlayButton_Previews: PreviewProvider {
     static var previews: some View {
-        PlayButton(audioService: .init(), recording: .previewRecording, isPlaying: false)
+        PlayButton(audioService: MockAudioRecordingViewModel().audioService, recording: .previewRecording, recordingType: .outgoing, isPlaying: false)
     }
 }
