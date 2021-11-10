@@ -29,4 +29,16 @@ class AudioRecordingPersistenceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
+
+    func testLoadSavedRecording_returnsURL() {
+        let url = sut.load(AudioRecording.previewRecording, of: .outgoing)
+        XCTAssertNotNil(url)
+        var components = url!.absoluteString.components(separatedBy: "/")
+        components.removeLast() // remove empty position
+
+        let previewRecordingURLFilename = AudioRecording.previewRecording.url.absoluteString
+        let previewRecordingComponents = previewRecordingURLFilename.components(separatedBy: "/")
+
+        XCTAssertEqual(components.last, previewRecordingComponents.last)
+    }
 }

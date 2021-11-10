@@ -36,8 +36,12 @@ class AudioRecordingPersistenceService {
         }
     }
 
-    func load(_ recording: AudioRecording, of type: RecordingType) -> URL {
-        return persistenceController.userDocumentPath(filePath(using: recording, of: type))
+    func load(_ recording: AudioRecording, of type: RecordingType) -> URL? {
+        let url = persistenceController.userDocumentPath(filePath(using: recording, of: type))
+        if FileManager.default.fileExists(atPath: url.path) {
+            return url
+        }
+        return nil
     }
 
     private func filePath(using recording: AudioRecording, of type: RecordingType) -> String {
