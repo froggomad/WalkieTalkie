@@ -46,6 +46,9 @@ class AudioRecordingPersistenceService {
 
     private func path(using recording: AudioRecording, of type: RecordingType) -> String {
         let storedUser = type == .outgoing ? recording.usernameTo : recording.unwrappedUsernameFrom
-        return "recordings/\(user.username)/\(type)/\(storedUser)\(recording.recording)"
+        // check for directory in filename
+        let filename = recording.recording.components(separatedBy: "/")
+        let recordingFilename: String = filename.count > 1 ? filename.last! : recording.recording
+        return "recordings/\(user.username)/\(type)/\(storedUser)\(recordingFilename)"
     }
 }
