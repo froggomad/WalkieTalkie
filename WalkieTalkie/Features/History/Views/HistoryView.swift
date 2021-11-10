@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @ObservedObject var viewModel: AudioRecordingViewModel = .init(audioService: AudioService())
+    @ObservedObject var viewModel: AudioRecordingViewModel = .init()
     @State private var searchText = ""
     @State private var isSearching = false
     @State private var listLoaded = false
@@ -109,6 +109,6 @@ struct HistoryView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(viewModel: AudioRecordingViewModel(apiService: MockAPIService(), audioService: AudioService()))
+        HistoryView(viewModel: AudioRecordingViewModel(apiService: MockAPIService()))
     }
 }

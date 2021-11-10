@@ -27,7 +27,7 @@ struct SectionView: View {
             let filteredRecordings = filteredRecordings.isEmpty ? recordingsToUse : filteredRecordings
             
             ForEach(filteredRecordings) { recording in
-                NavigationLink(destination: PlaybackView(recording: recording, audioService: viewModel.audioService, recordingType: recordingType)) {
+                NavigationLink(destination: PlaybackView(recording: recording, viewModel: viewModel, recordingType: recordingType)) {
                     RecordingRow(audioService: viewModel.audioService, recording: recording, recordingType: recordingType)
                 }
             }

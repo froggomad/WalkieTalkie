@@ -13,12 +13,12 @@ class AudioRecordingViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var apiError: NetworkError? = nil
     let user = User(username: "admin", userType: .admin)
-    
+
     var audioService: AudioService
     let apiService: APIManageable
     
-    init(apiService: APIManageable = APIService(), audioService: AudioService) {
-        self.audioService = audioService
+    init(apiService: APIManageable = APIService()) {
+        self.audioService = AudioService(persistenceService: .init(user: user))
         self.apiService = apiService
         loadRecordingsFromAPI()
     }

@@ -57,6 +57,6 @@ class AudioRecordingPersistenceService {
     }
 
     func isRecordingSaved(_ recording: AudioRecording, of type: RecordingType) -> Bool {
-        return persistenceController.isFilePersisted(at: directoryPath(using: recording, of: type))
+        return persistenceController.isFilePersisted(at: filePath(using: recording, of: type))
     }
 }

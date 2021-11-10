@@ -8,8 +8,8 @@
 import Foundation
 
 class MockAudioRecordingViewModel: AudioRecordingViewModel {
-    override init(apiService: APIManageable = MockAPIService(), audioService: AudioService = .init()) {
-        super.init(apiService: apiService, audioService: audioService)
+    override init(apiService: APIManageable = MockAPIService()) {
+        super.init(apiService: apiService)
         incomingRecordings = [
             AudioRecording(id: 0, usernameFrom: "Bob", usernameTo: "Fred", timestamp: Date(), recording: "filename.mp3"),
             AudioRecording(id: 0, usernameFrom: "Bob", usernameTo: "Fred", timestamp: Date(), recording: "filename2.mp3"),

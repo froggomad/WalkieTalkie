@@ -38,6 +38,6 @@ struct RecordingRow: View, ToFromUser {
 
 struct RecordingRow_Previews: PreviewProvider {
     static var previews: some View {
-        RecordingRow(audioService: AudioService(), recording: AudioRecording.previewRecording, recordingType: .outgoing)
+        RecordingRow(audioService: MockAudioRecordingViewModel().audioService, recording: AudioRecording.previewRecording, recordingType: .outgoing)
     }
 }

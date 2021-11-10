@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PlaybackView: View, ToFromUser {
     @State var recording: AudioRecording
-    @State var audioService: AudioService
+    @State var viewModel: AudioRecordingViewModel
+
     let recordingType: RecordingType
     
     var body: some View {
@@ -27,13 +28,15 @@ struct PlaybackView: View, ToFromUser {
                             .accessibilityLabel("\(toFromLabel) user \(toFromUsername)")
                     }
                     .foregroundColor(ColorSheet.lightText)
-                    PlayButton(audioService: audioService, recording: recording)
+                    PlayButton(audioService: viewModel.audioService, recording: recording, recordingType: recordingType)
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 80)
                 .onDisappear {
-                    audioService.pause()
+                    viewModel.audioService.pause()
                 }
+
+                SaveButton(persistenceService: viewModel.audioService.persistenceService, recording: recording, recordingType: recordingType)
                 Spacer()
             }
         }
@@ -43,7 +46,6 @@ struct PlaybackView: View, ToFromUser {
 
 struct PlaybackRecordingView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaybackView(recording: .previewRecording, audioService: .init(), recordingType: .outgoing)
-        
+        PlaybackView(recording: .previewRecording, viewModel: MockAudioRecordingViewModel(), recordingType: .outgoing)
     }
 }
