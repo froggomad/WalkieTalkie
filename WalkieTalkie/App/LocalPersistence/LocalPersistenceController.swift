@@ -15,11 +15,14 @@ class LocalPersistenceController {
 
     func save(data: Data, to path: String) -> Bool {
         do {
-            let path = userDocumentPath(path)
-            try data.write(to: path)
+            let filePath = userDocumentPath(path)
+            createDirectory(at: filePath)
+
+            try data.write(to: filePath)
         } catch {
             print("error saving file to \(path): \(error)")
         }
+
         return isFilePersisted(at: path)
     }
 
@@ -29,12 +32,26 @@ class LocalPersistenceController {
     }
 
     func delete(at path: String) -> Bool {
-        try? FileManager.default.removeItem(atPath: path)
+        do {
+            try FileManager.default.removeItem(atPath: path)
+        } catch {
+            print("Error deleting file: \(error.localizedDescription)")
+        }
         return isFilePersisted(at: path)
     }
 
-    private func userDocumentPath(_ path: String) -> URL {
+    func userDocumentPath(_ path: String) -> URL {
         FileManager.default.urls(for: .documentDirectory,
-                                               in: .userDomainMask)[0].appendingPathComponent(path)
+                                               in: .userDomainMask)[0].appendingPathComponent(path, isDirectory: true)
+    }
+
+    private func createDirectory(at path: URL) {
+        if !FileManager.default.fileExists(atPath: path.absoluteString) {
+            do {
+                try FileManager.default.createDirectory(at: path, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print("error creating directory: \(error.localizedDescription)")
+            }
+        }
     }
 }
