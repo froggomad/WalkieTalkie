@@ -10,9 +10,8 @@ import XCTest
 
 class AudioServiceTests: XCTestCase {
     func testAudioServiceCanPlayFile() {
-        let url = Bundle.main.url(forResource: "example_recording", withExtension: "mp3")!
         let avPlayer = AudioService(persistenceService: .init(user: User(username: "admin", userType: .admin)))
-        avPlayer.url = url
+        avPlayer.setRecording(AudioRecording.previewRecording, of: .outgoing)
         avPlayer.player?.play()
         XCTAssertNil(avPlayer.player?.error)
         avPlayer.player?.pause()

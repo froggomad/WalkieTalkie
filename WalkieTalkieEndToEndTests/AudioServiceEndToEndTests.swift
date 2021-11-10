@@ -11,9 +11,9 @@ import XCTest
 class AudioServiceEndToEndTests: XCTestCase {
 
     func testAudioServiceCanPlayURL() {
-        let url = URL(string: "localhost:3000/recordings/example_transmission.mp3")!
+        let recording = AudioRecording.previewRecording
         let avPlayer = AudioService(persistenceService: .init(user: User(username: "admin", userType: .admin)))
-        avPlayer.url = url
+        avPlayer.setRecording(recording, of: .outgoing)
         avPlayer.play()
         XCTAssertNil(avPlayer.player?.error)
         XCTAssertNotEqual(avPlayer.player?.status, .failed)
