@@ -53,7 +53,7 @@ class AudioRecordingPersistenceService {
 
     private func directoryPath(using recording: AudioRecording, of type: RecordingType) -> String {
         let storedUser = type == .outgoing ? recording.usernameTo : recording.unwrappedUsernameFrom
-        return "recordings/\(user.username)/\(type)/\(storedUser)"
+        return "recordings/\(user.username)/\(type)/\(storedUser)/\(recording.timestamp.description)"
     }
 
     func isRecordingSaved(_ recording: AudioRecording, of type: RecordingType) -> Bool {
