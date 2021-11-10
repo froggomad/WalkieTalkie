@@ -49,6 +49,7 @@
 		AAD3C97E273ADE4C003210FF /* LocalPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C97D273ADE4C003210FF /* LocalPersistenceTests.swift */; };
 		AAD3C985273B125D003210FF /* AudioRecordingPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C984273B125D003210FF /* AudioRecordingPersistenceService.swift */; };
 		AAD3C98D273B1956003210FF /* AudioRecordingPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C98C273B1956003210FF /* AudioRecordingPersistenceTests.swift */; };
+		AAD3C998273B90FC003210FF /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C997273B90FC003210FF /* SaveButton.swift */; };
 		AAD9EC41272C4F2E0099A562 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9EC40272C4F2E0099A562 /* User.swift */; };
 		AAEB5D5A27398D77009D951B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB5D5927398D77009D951B /* LoadingView.swift */; };
 /* End PBXBuildFile section */
@@ -148,6 +149,7 @@
 		AAD3C984273B125D003210FF /* AudioRecordingPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingPersistenceService.swift; sourceTree = "<group>"; };
 		AAD3C98A273B1956003210FF /* AudioRecordingPersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioRecordingPersistenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD3C98C273B1956003210FF /* AudioRecordingPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingPersistenceTests.swift; sourceTree = "<group>"; };
+		AAD3C997273B90FC003210FF /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		AAD9EC40272C4F2E0099A562 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AAEB5D5927398D77009D951B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -506,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				AAD3C984273B125D003210FF /* AudioRecordingPersistenceService.swift */,
+				AAD3C997273B90FC003210FF /* SaveButton.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				AABE5AB127307F620081D877 /* ToFromUser.swift in Sources */,
 				AA19D507272A076100CFD6D8 /* GetRecordingRequest.swift in Sources */,
 				AA19D50B272A150B00CFD6D8 /* RecordingRow.swift in Sources */,
+				AAD3C998273B90FC003210FF /* SaveButton.swift in Sources */,
 				AA19D4F52729FAA300CFD6D8 /* RequestType.swift in Sources */,
 				AA19D4F9272A022000CFD6D8 /* APIService.swift in Sources */,
 				AA19D4F72729FB1A00CFD6D8 /* APIManageable.swift in Sources */,
