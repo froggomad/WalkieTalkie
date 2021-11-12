@@ -30,7 +30,7 @@ struct SaveButton: View {
                 }
             } else {
                 Button("Delete Recording") {
-                    // TODO: Delete recording
+                    persistenceService.delete(recording, of: recordingType)
                     isRecordingSaved = false
                 }
             }
