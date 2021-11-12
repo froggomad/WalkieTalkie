@@ -52,7 +52,7 @@ class AudioRecordingPersistenceService {
         do {
             let url = recordingURL(using: recording, of: type)
             try FileManager.default.removeItem(at: url)
-            return FileManager.default.fileExists(atPath: url.absoluteString)
+            return !FileManager.default.fileExists(atPath: url.absoluteString)
         } catch {
             print(error)
             return false
