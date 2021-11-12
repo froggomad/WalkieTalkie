@@ -37,11 +37,26 @@ class AudioRecordingPersistenceService {
     }
 
     func load(_ recording: AudioRecording, of type: RecordingType) -> URL? {
-        let url = persistenceController.userDocumentPath(filePath(using: recording, of: type))
+        let url = recordingURL(using: recording, of: type)
         if FileManager.default.fileExists(atPath: url.path) {
             return url
         }
         return nil
+    }
+
+    func recordingURL(using recording: AudioRecording, of type: RecordingType) -> URL {
+        persistenceController.userDocumentPath(filePath(using: recording, of: type))
+    }
+
+    @discardableResult func delete(_ recording: AudioRecording, of type: RecordingType) -> Bool {
+        do {
+            let url = recordingURL(using: recording, of: type)
+            try FileManager.default.removeItem(at: url)
+            return FileManager.default.fileExists(atPath: url.absoluteString)
+        } catch {
+            print(error)
+            return false
+        }
     }
 
     private func filePath(using recording: AudioRecording, of type: RecordingType) -> String {

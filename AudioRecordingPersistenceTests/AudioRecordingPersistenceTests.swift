@@ -9,6 +9,13 @@ import XCTest
 @testable import WalkieTalkie
 
 class AudioRecordingPersistenceTests: XCTestCase {
+
+    override func tearDownWithError() throws {
+        try super.tearDownWithError()
+        sut.delete(AudioRecording.previewRecording, of: .outgoing)
+        sut.delete(AudioRecording.previewRecording, of: .incoming)
+    }
+
     private var sut: AudioRecordingPersistenceService = .init(user: User(username: "admin", userType: .admin))
 
     func testSaveRecordingToDisk_returnsTrue() {
@@ -46,6 +53,20 @@ class AudioRecordingPersistenceTests: XCTestCase {
             let previewRecordingComponents = previewRecordingURLFilename.components(separatedBy: "/")
 
             XCTAssertEqual(components.last, previewRecordingComponents.last)
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+
+    func testDeleteRecording_returnsTrue() {
+        let expectation = self.expectation(description: "save file to test deleting recording")
+        let recording = AudioRecording.previewRecording
+        sut.save(recording, of: .outgoing) { [weak self] result in
+            expectation.fulfill()
+            guard let self = self else {
+                XCTFail("self was nil in \(#function)")
+                return
+            }
+            XCTAssertTrue(self.sut.delete(recording, of: .outgoing))
         }
         wait(for: [expectation], timeout: 10.0)
     }
