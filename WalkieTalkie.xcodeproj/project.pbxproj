@@ -46,10 +46,10 @@
 		AAD3C976273ADDA4003210FF /* LocalPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C975273ADDA4003210FF /* LocalPersistenceController.swift */; };
 		AAD3C97E273ADE4C003210FF /* LocalPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C97D273ADE4C003210FF /* LocalPersistenceTests.swift */; };
 		AAD3C985273B125D003210FF /* AudioRecordingPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C984273B125D003210FF /* AudioRecordingPersistenceService.swift */; };
-		AAD3C98D273B1956003210FF /* AudioRecordingPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C98C273B1956003210FF /* AudioRecordingPersistenceTests.swift */; };
 		AAD3C998273B90FC003210FF /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3C997273B90FC003210FF /* SaveButton.swift */; };
 		AAD9EC41272C4F2E0099A562 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9EC40272C4F2E0099A562 /* User.swift */; };
 		AAEB5D5A27398D77009D951B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB5D5927398D77009D951B /* LoadingView.swift */; };
+		AAF180CF273F4CC100BA0F52 /* AudioRecordingPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF180CE273F4CC100BA0F52 /* AudioRecordingPersistenceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,13 +82,6 @@
 			remoteInfo = WalkieTalkie;
 		};
 		AAD3C97F273ADE4C003210FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA19D4D42729F95900CFD6D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AA19D4DB2729F95900CFD6D8;
-			remoteInfo = WalkieTalkie;
-		};
-		AAD3C98E273B1956003210FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AA19D4D42729F95900CFD6D8 /* Project object */;
 			proxyType = 1;
@@ -144,11 +137,10 @@
 		AAD3C97B273ADE4C003210FF /* LocalPersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalPersistenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD3C97D273ADE4C003210FF /* LocalPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersistenceTests.swift; sourceTree = "<group>"; };
 		AAD3C984273B125D003210FF /* AudioRecordingPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingPersistenceService.swift; sourceTree = "<group>"; };
-		AAD3C98A273B1956003210FF /* AudioRecordingPersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioRecordingPersistenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAD3C98C273B1956003210FF /* AudioRecordingPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingPersistenceTests.swift; sourceTree = "<group>"; };
 		AAD3C997273B90FC003210FF /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		AAD9EC40272C4F2E0099A562 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AAEB5D5927398D77009D951B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		AAF180CE273F4CC100BA0F52 /* AudioRecordingPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecordingPersistenceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,13 +186,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAD3C987273B1956003210FF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -213,7 +198,6 @@
 				AAC0EB0C272DE45C00B28123 /* AudioServiceTests */,
 				AAC0EB1F272DEC1700B28123 /* SearchTests */,
 				AAD3C97C273ADE4C003210FF /* LocalPersistenceTests */,
-				AAD3C98B273B1956003210FF /* AudioRecordingPersistenceTests */,
 				AA19D4DD2729F95900CFD6D8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -227,7 +211,6 @@
 				AAC0EB0B272DE45C00B28123 /* AudioServiceTests.xctest */,
 				AAC0EB1E272DEC1700B28123 /* SearchTests.xctest */,
 				AAD3C97B273ADE4C003210FF /* LocalPersistenceTests.xctest */,
-				AAD3C98A273B1956003210FF /* AudioRecordingPersistenceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -418,6 +401,7 @@
 		AAC0EAFF272DD4C300B28123 /* WalkieTalkieEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
+				AAF180CE273F4CC100BA0F52 /* AudioRecordingPersistenceTests.swift */,
 				AAC0EB00272DD4C300B28123 /* WalkieTalkieEndToEndNetworkTests.swift */,
 				AAC0EB14272DE4C000B28123 /* AudioServiceEndToEndTests.swift */,
 			);
@@ -515,14 +499,6 @@
 				AAD3C97D273ADE4C003210FF /* LocalPersistenceTests.swift */,
 			);
 			path = LocalPersistenceTests;
-			sourceTree = "<group>";
-		};
-		AAD3C98B273B1956003210FF /* AudioRecordingPersistenceTests */ = {
-			isa = PBXGroup;
-			children = (
-				AAD3C98C273B1956003210FF /* AudioRecordingPersistenceTests.swift */,
-			);
-			path = AudioRecordingPersistenceTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -635,24 +611,6 @@
 			productReference = AAD3C97B273ADE4C003210FF /* LocalPersistenceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AAD3C989273B1956003210FF /* AudioRecordingPersistenceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AAD3C990273B1956003210FF /* Build configuration list for PBXNativeTarget "AudioRecordingPersistenceTests" */;
-			buildPhases = (
-				AAD3C986273B1956003210FF /* Sources */,
-				AAD3C987273B1956003210FF /* Frameworks */,
-				AAD3C988273B1956003210FF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AAD3C98F273B1956003210FF /* PBXTargetDependency */,
-			);
-			name = AudioRecordingPersistenceTests;
-			productName = AudioRecordingPersistenceTests;
-			productReference = AAD3C98A273B1956003210FF /* AudioRecordingPersistenceTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -686,10 +644,6 @@
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = AA19D4DB2729F95900CFD6D8;
 					};
-					AAD3C989273B1956003210FF = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = AA19D4DB2729F95900CFD6D8;
-					};
 				};
 			};
 			buildConfigurationList = AA19D4D72729F95900CFD6D8 /* Build configuration list for PBXProject "WalkieTalkie" */;
@@ -711,7 +665,6 @@
 				AAC0EB0A272DE45C00B28123 /* AudioServiceTests */,
 				AAC0EB1D272DEC1700B28123 /* SearchTests */,
 				AAD3C97A273ADE4C003210FF /* LocalPersistenceTests */,
-				AAD3C989273B1956003210FF /* AudioRecordingPersistenceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -755,13 +708,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AAD3C979273ADE4C003210FF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AAD3C988273B1956003210FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -815,6 +761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF180CF273F4CC100BA0F52 /* AudioRecordingPersistenceTests.swift in Sources */,
 				AAC0EB01272DD4C300B28123 /* WalkieTalkieEndToEndNetworkTests.swift in Sources */,
 				AAC0EB15272DE4C000B28123 /* AudioServiceEndToEndTests.swift in Sources */,
 			);
@@ -853,14 +800,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAD3C986273B1956003210FF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AAD3C98D273B1956003210FF /* AudioRecordingPersistenceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -888,11 +827,6 @@
 			isa = PBXTargetDependency;
 			target = AA19D4DB2729F95900CFD6D8 /* WalkieTalkie */;
 			targetProxy = AAD3C97F273ADE4C003210FF /* PBXContainerItemProxy */;
-		};
-		AAD3C98F273B1956003210FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AA19D4DB2729F95900CFD6D8 /* WalkieTalkie */;
-			targetProxy = AAD3C98E273B1956003210FF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1297,50 +1231,6 @@
 			};
 			name = Release;
 		};
-		AAD3C991273B1956003210FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kennydubroff.AudioRecordingPersistenceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkieTalkie.app/WalkieTalkie";
-			};
-			name = Debug;
-		};
-		AAD3C992273B1956003210FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kennydubroff.AudioRecordingPersistenceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkieTalkie.app/WalkieTalkie";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1403,15 +1293,6 @@
 			buildConfigurations = (
 				AAD3C982273ADE4C003210FF /* Debug */,
 				AAD3C983273ADE4C003210FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AAD3C990273B1956003210FF /* Build configuration list for PBXNativeTarget "AudioRecordingPersistenceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AAD3C991273B1956003210FF /* Debug */,
-				AAD3C992273B1956003210FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

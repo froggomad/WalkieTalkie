@@ -57,7 +57,11 @@ class AudioRecordingPersistenceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testDeleteRecording_returnsTrue() {
+    func testLoadUnsavedRecording_returnsNil() {
+        XCTAssertNil(sut.load(AudioRecording.previewRecording, of: .outgoing))
+    }
+
+    func testDeleteSavedRecording_returnsTrue() {
         let expectation = self.expectation(description: "save file to test deleting recording")
         let recording = AudioRecording.previewRecording
         sut.save(recording, of: .outgoing) { [weak self] result in
@@ -69,5 +73,9 @@ class AudioRecordingPersistenceTests: XCTestCase {
             XCTAssertTrue(self.sut.delete(recording, of: .outgoing))
         }
         wait(for: [expectation], timeout: 10.0)
+    }
+
+    func testDeleteUnsavedRecording_returnsFalse() {
+        XCTAssertFalse(sut.delete(AudioRecording.previewRecording, of: .outgoing))
     }
 }
